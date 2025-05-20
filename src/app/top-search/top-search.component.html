@@ -1,8 +1,9 @@
 <div class="flex flex-row justify-center items-stretch w-dvw">
-    <p-menubar class="ml-2 mr-2" [model]="items">
+    
+    <p-menubar class="h-12 ml-2 mr-2" [model]="items">
         <ng-template #start>
             <ng-template #item let-item let-root="root">
-                <a [routerLink]="item.route" pRipple class="flex items-center p-menubar-item-link">
+                <a [routerLink]="item.route" pRipple class="h-12 flex items-center p-menubar-item-link">
                     <span>{{ item.label }}</span>
                     <span *ngIf="item.shortcut" class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1">{{ item.shortcut }}</span>
                     <i *ngIf="item.items" [ngClass]="['ml-auto pi', root ? 'pi-angle-down' : 'pi-angle-right']"></i>
@@ -14,7 +15,6 @@
     <p-toolbar class="w-4/5">   
         <ng-template #start>        
         </ng-template>
-
         <ng-template #center >    
             <p-floatlabel variant="on">
                 <p-iconfield class=>
@@ -24,7 +24,6 @@
                 <label for="on_label" style="color: aliceblue;"> Search</label>
             </p-floatlabel>
         </ng-template>
-
         <ng-template #end>
         </ng-template>
 

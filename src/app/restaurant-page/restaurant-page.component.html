@@ -1,38 +1,49 @@
 <div class="mt-1">
     <app-top-search></app-top-search>
-</div>
-<div class="m-3">
-    <p-button routerLink="/browse"> <i class="pi pi-arrow-left"></i></p-button>
+    <div class="ml-14 m-3">
+        <p-button routerLink="/browse" class="h-48 content-center"> <i class="pi pi-arrow-left"></i></p-button>
+    </div>
 </div>
 <div class="static mx-auto place-content-center w-3/4 surface-card p-4 shadow-2 border-round">
     
     <div class="relative h-1/12">
-        <img alt="Card" class="h-48 w-full object-cover" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/56/71/59/atmosphere.jpg" />
+        <img alt="Card" class="rounded-md h-48 w-full object-cover" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/e1/5c/3c/caption.jpg" />
 
     </div>
 
-    <div class="text-3xl font-medium text-900 mb-3">Restaurant name</div>
-    <div class="font-medium text-500 mb-3">Description of the restaurant - At [Restaurant Name], we believe in simple, good food done right.
-    Our menu is built around fresh, seasonal ingredients sourced from local suppliers whenever possible.
-    Experience vibrant flavors and thoughtfully prepared dishes in a bright and welcoming setting.
-    Join us for a taste of something delicious. </div>
+    <div class="text-4xl font-medium mt-3 text-900 mb-3">Smuggler's Inn</div>
+    <div class="font-normal text-500 text-gray-400 mb-3">Description of the restaurant - At Smuggler's Inn, we believe in simple, good food done right. Our menu is built around fresh, seasonal ingredients sourced from local suppliers whenever possible. Experience vibrant flavors and thoughtfully prepared dishes in a bright and welcoming setting. Join us for a taste of something delicious. </div>
     
-    <div class="relative ml-8 mr-8 surface-border">
-        <div class="absolute mt-3 right-8 card flex justify-center">
-            <p-rating [(ngModel)]="value" [readonly]="true"/>
-            <h1 class="ml-2">score/5.0</h1> 
+    <div class="grid grid-flow-col grid-rows-3 gap-4">
+        <div class="row-start-1 row-end-1">
+            <div class="mt-3">
+                <i class="pi pi-map-marker"></i>
+                Location
+            </div >
+            <div class="mt-3">
+                <i class="pi pi-phone"></i>
+                555-333-222
+            </div>
+            
+            <p-table [value]="restaurants" [tableStyle]="{ 'max-width': '15rem' }">
+                <ng-template #header>
+                    <tr>
+                        <th>Day</th>
+                        <th>Hours </th>
+                    </tr>
+                </ng-template>
+                <ng-template #body let-restaurant>
+                    <tr>
+                        <td>{{ restaurant.day }}</td>
+                        <td>{{ restaurant.hour }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </div>
-    </div>
-
-    <div>
-            Lokalizacja
-    </div>
-
-    <div>
-            Godziny otwarcia 
-    </div>
-
-    <div>
-            Telefon
+        <div class="row-start-1 row-end-3">
+            <p-rating [(ngModel)]="value" [readonly]="true"/><h1 class="ml-2">score/5.0</h1> 
+            
+        </div>
+        
     </div>
 </div>

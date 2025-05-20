@@ -18,7 +18,7 @@ import { RouterLink} from '@angular/router';
   styleUrl: './top-search.component.css'
 })
 export class TopSearchComponent implements OnInit {
-  items: MenuItem[] | undefined;
+    items: MenuItem[] | undefined;
 
     ngOnInit() {
         this.items = [
