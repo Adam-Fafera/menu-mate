@@ -6,9 +6,10 @@ import { ReviewComponent } from './review/review.component';
 
 export const routes: Routes = [
     {path: 'browse', component: BrowseComponent},
-    {path: 'restaurant', component: RestaurantPageComponent},
+    {path: 'restaurant/:id', component: RestaurantPageComponent},
     {path: 'review', component: ReviewComponent},
-
+    
+    {path: '', redirectTo: 'browse', pathMatch: 'full'},
     // ↓↓↓↓ Add only at the end of routes, otherwise it will not read the rest of routes
     {path: '**', component: PageNotFoundComponent},
     
