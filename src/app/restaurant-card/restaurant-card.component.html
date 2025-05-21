@@ -11,7 +11,9 @@
         </p>
         <ng-template #footer>
             <div class="flex gap-4 mt-1">
-                <p-button routerLink="['/restaurant', restaurant.id']" label="Go to restaurant" class="w-full" styleClass="w-full" />
+                <a (click)="goToRestaurant()" class="w-full">
+                    <p-button  label="Go to restaurant" class="w-full" styleClass="w-full" />
+                </a>    
             </div>
         </ng-template>
     </p-card>

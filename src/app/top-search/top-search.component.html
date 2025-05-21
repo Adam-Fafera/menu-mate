@@ -1,19 +1,20 @@
+<p-drawer [(visible)]="visible" header="Drawer">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+    </p>
+</p-drawer>
+
+
 <div class="flex flex-row justify-center items-stretch w-dvw">
     
-    <p-menubar class="h-12 ml-2 mr-2" [model]="items">
-        <ng-template #start>
-            <ng-template #item let-item let-root="root">
-                <a [routerLink]="item.route" pRipple class="h-12 flex items-center p-menubar-item-link">
-                    <span>{{ item.label }}</span>
-                    <span *ngIf="item.shortcut" class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1">{{ item.shortcut }}</span>
-                    <i *ngIf="item.items" [ngClass]="['ml-auto pi', root ? 'pi-angle-down' : 'pi-angle-right']"></i>
-                </a>
-            </ng-template>
-        </ng-template>
-    </p-menubar>
+    <p-toolbar class="w-full ml-3 mr-3">
 
-    <p-toolbar class="w-4/5">   
-        <ng-template #start>        
+        <!-- fix this  -->
+        <p-button (click)="visible = true" icon="pi pi-bars" />  
+        <ng-template #start>
+
         </ng-template>
         <ng-template #center >    
             <p-floatlabel variant="on">
@@ -25,20 +26,9 @@
             </p-floatlabel>
         </ng-template>
         <ng-template #end>
+            <p-avatar></p-avatar>
         </ng-template>
-
     </p-toolbar>
 
-    <p-menubar class="ml-2 mr-2" [model]="items">
-        <ng-template #start>        
-            <ng-template #item let-item let-root="root">
-                <a [routerLink]="item.route" pRipple class="flex items-center p-menubar-item-link">
-                    <span>{{ item.label }}</span>
-                    <p-badge *ngIf="item.badge" [ngClass]="{ 'ml-auto': !root, 'ml-2': root }" [value]="item.badge" />
-                    <span *ngIf="item.shortcut" class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1">{{ item.shortcut }}</span>
-                    <i *ngIf="item.items" [ngClass]="['ml-auto pi', root ? 'pi-angle-down' : 'pi-angle-right']"></i>
-                </a>
-            </ng-template>
-        </ng-template>
-    </p-menubar>
+    
 </div>

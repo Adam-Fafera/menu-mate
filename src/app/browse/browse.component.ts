@@ -3,6 +3,7 @@ import { RestaurantCardComponent } from '../restaurant-card/restaurant-card.comp
 import { TopSearchComponent } from "../top-search/top-search.component";
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-browse',
   standalone: true,
@@ -11,6 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './browse.component.css'
 })
 export class BrowseComponent {
+  visible: boolean = false;
 
   restaurants = [
     {id:1, name: "Smuggler's Inn", rating: 4, img: "https://goldwasser.pl/wp-content/uploads/elementor/thumbs/img-10-1-q8og8cjddjcr5h1n2fxaq883jkyobsqpck77ze3tqw.jpg"},
