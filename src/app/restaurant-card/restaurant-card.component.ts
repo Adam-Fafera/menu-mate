@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurant-card',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class RestaurantCardComponent {
   @Input() restaurant:any;
-
+  
   constructor(private router: Router) {}
 
   goToRestaurant(): void {
