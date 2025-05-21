@@ -7,41 +7,45 @@
 <div class="static mx-auto place-content-center w-3/4 surface-card p-4 shadow-2 border-round">
     
     <div class="relative h-1/12">
-        <img alt="Card" class="rounded-md h-48 w-full object-cover" src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/e1/5c/3c/caption.jpg" />
+        <img alt="Card" class="rounded-md h-48 w-full object-cover" src={{selectedRestaurant.img}} />
     </div>
 
-    <div class="text-4xl font-medium mt-3 text-900 mb-3">Smuggler's Inn</div>
-    <div class="font-normal text-500 text-gray-400 mb-3">Description of the restaurant - At Smuggler's Inn, we believe in simple, good food done right. Our menu is built around fresh, seasonal ingredients sourced from local suppliers whenever possible. Experience vibrant flavors and thoughtfully prepared dishes in a bright and welcoming setting. Join us for a taste of something delicious. </div>
+    <div class="text-4xl font-medium mt-3 text-900 mb-3"> {{selectedRestaurant.name}} </div>
+    <div class="font-normal text-500 text-gray-400 mb-3"> {{selectedRestaurant.description}} </div>
     
     <div class="grid grid-flow-col grid-rows-3 gap-4">
         <div class="row-start-1 row-end-1">
             <div class="mt-3">
                 <i class="pi pi-map-marker"></i>
-                Location
+                {{selectedRestaurant.location}}
             </div >
             <div class="mt-3">
                 <i class="pi pi-phone"></i>
                 555-333-222
             </div>
-            
-            <p-table [value]="restaurants" [tableStyle]="{ 'max-width': '15rem' }">
-                <ng-template #header>
-                    <tr>
-                        <th>Day</th>
-                        <th>Hours </th>
-                    </tr>
-                </ng-template>
-                <ng-template #body let-restaurant>
-                    <tr>
-                        <td>{{ restaurant.day }}</td>
-                        <td>{{ restaurant.hour }}</td>
-                    </tr>
-                </ng-template>
-            </p-table>
+            <div *ngIf="selectedRestaurant">
+                <p-table [value]="getHoursArray()" [tableStyle]="{ 'max-width': '15rem' }">
+                    <ng-template #header>
+                        <tr>
+                            <th>Day</th>
+                            <th>Hours </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-hourObj>
+                        <tr>
+                            <td>{{ hourObj.day }}</td>
+                            <td>{{ hourObj.hours }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
         </div>
         <div class="row-start-1 row-end-3">
-            <p-rating [(ngModel)]="value" [readonly]="true"/><h1 class="ml-2">score/5.0</h1> 
+            <p-rating [(ngModel)]="value" [readonly]="true"/><h1 class="ml-2">{{selectedRestaurant.rating}} /5.0</h1> 
             
+        </div>
+        <div>
+            <strong> Restaurant ID: {{ selectedRestaurant.id}}</strong> 
         </div>
         
     </div>

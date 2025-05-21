@@ -6,40 +6,19 @@ import { InputIconModule } from 'primeng/inputicon';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { BadgeModule } from 'primeng/badge';
 import { CommonModule } from '@angular/common';
-import { MenuItem } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
 import { MenubarModule } from 'primeng/menubar';
 import { DrawerModule } from 'primeng/drawer';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-top-search',
-  imports: [ToolbarModule, ButtonModule, IconFieldModule, InputIconModule, FloatLabelModule, BadgeModule, CommonModule, AvatarModule, MenubarModule, DrawerModule],
+  imports: [ToolbarModule, ButtonModule, IconFieldModule, InputIconModule, FloatLabelModule, BadgeModule, CommonModule, AvatarModule, MenubarModule, DrawerModule, RouterLink],
   templateUrl: './top-search.component.html',
   styleUrl: './top-search.component.css'
 })
-export class TopSearchComponent implements OnInit {
+export class TopSearchComponent{
 // Fix this drawer Module\/
     visible = false;
-
-    items: MenuItem[] | undefined;
-
-    ngOnInit() {
-        this.items = [
-            {
-                label: 'Menu',
-            
-                items: [
-                    {
-                        label: 'Browse',
-                        route: '/browse'
-                    },
-                    {
-                        label: 'Not Found',
-                        route: '/404'
-                    }
-                ]
-            },
-          ]
-    };
 
 }

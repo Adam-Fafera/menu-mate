@@ -1,33 +1,26 @@
-<p-drawer [(visible)]="visible" header="Drawer">
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
-    </p>
+<p-drawer [(visible)]="visible" header="Menu">
+    <div class="flex flex-col justify-center items-center gap-y-5">
+        
+        <p-button routerLink="/browse" class="w-full" styleClass="w-full">Browse</p-button>
+        <p-button class="w-full" styleClass="w-full">Placeholder 1</p-button>
+        <p-button class="w-full" styleClass="w-full">Placeholder 2</p-button>
+        <p-button class="w-full" styleClass="w-full">Placeholder 3</p-button>
+    </div>
+
 </p-drawer>
 
 
-<div class="flex flex-row justify-center items-stretch w-dvw">
-    
+<div class="flex flex-row justify-center items-stretch">    
     <p-toolbar class="w-full ml-3 mr-3">
-
-        <!-- fix this  -->
         <p-button (click)="visible = true" icon="pi pi-bars" />  
-        <ng-template #start>
-
-        </ng-template>
-        <ng-template #center >    
-            <p-floatlabel variant="on">
-                <p-iconfield class=>
-                    <p-inputicon class="pi pi-search" />
-                    <input class="text-center w-96 h-10 rounded-2xl"  pInputText id="on_label" autocomplete="off" />
-                </p-iconfield>
-                <label for="on_label" style="color: aliceblue;"> Search</label>
-            </p-floatlabel>
-        </ng-template>
-        <ng-template #end>
-            <p-avatar></p-avatar>
-        </ng-template>
+        <p-floatlabel variant="on">
+            <p-iconfield >
+                <p-inputicon class="pi pi-search" />
+                <input class="text-center sm:w-auto lg:w-96 h-10 rounded-2xl"  pInputText id="on_label" autocomplete="off" />
+            </p-iconfield>
+            <label for="on_label" style="color: aliceblue;"> Search</label>
+        </p-floatlabel>
+        <p-avatar shape="circle" class="h-full w-svw"></p-avatar>       
     </p-toolbar>
 
     
