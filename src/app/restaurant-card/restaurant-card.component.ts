@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './restaurant-card.component.css'
 })
 export class RestaurantCardComponent {
-  @Input()  restaurant:any;
+  @Input() restaurant:any;
 }
