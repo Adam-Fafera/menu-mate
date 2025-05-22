@@ -1,16 +1,20 @@
 import { Component, Input } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { RatingModule } from 'primeng/rating';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-restaurant-card',
-  imports: [ButtonModule, CardModule],
+  imports: [ButtonModule, CardModule, RatingModule, FormsModule],
   templateUrl: './restaurant-card.component.html',
   styleUrl: './restaurant-card.component.css'
 })
 export class RestaurantCardComponent {
   @Input() restaurant:any;
+  value : number = 4;
   
   constructor(private router: Router) {}
 

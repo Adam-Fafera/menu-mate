@@ -4,10 +4,9 @@
             <img alt="Card" class="h-48 w-full object-cover" src={{restaurant.img}} />
         </ng-template>
         <ng-template #title> {{restaurant.name}} </ng-template>
-        <ng-template #subtitle> Card subtitle {{restaurant.rating}} </ng-template>
+        <ng-template #subtitle> <p-rating [(ngModel)]="restaurant.rating" [readonly]="true"></p-rating> {{restaurant.rating}} </ng-template>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+            {{restaurant.description}}
         </p>
         <ng-template #footer>
             <div class="flex gap-4 mt-1">
