@@ -21,8 +21,5 @@ export class TopSearchComponent{
     visible = false;
     constructor(private router : Router) {}
     
-    goToUser() : void {
-      this.router.navigate('/user');
-    }
 
 }
