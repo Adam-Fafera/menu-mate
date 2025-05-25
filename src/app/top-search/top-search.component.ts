@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { AvatarModule } from 'primeng/avatar';
 import { MenubarModule } from 'primeng/menubar';
 import { DrawerModule } from 'primeng/drawer';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-top-search',
@@ -18,7 +18,11 @@ import { RouterLink } from '@angular/router';
   styleUrl: './top-search.component.css'
 })
 export class TopSearchComponent{
-// Fix this drawer Module\/
     visible = false;
+    constructor(private router : Router) {}
+    
+    goToUser() : void {
+      this.router.navigate('/user');
+    }
 
 }

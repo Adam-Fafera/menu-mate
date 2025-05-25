@@ -20,7 +20,9 @@
             </p-iconfield>
             <label for="on_label" style="color: aliceblue;"> Search</label>
         </p-floatlabel>
-        <p-avatar shape="circle" class="h-full w-svw"></p-avatar>       
+        <div routerLink="/user" (click)="goToUser()">
+            <p-avatar icon="pi pi-user" shape="circle" class="h-full w-svw"></p-avatar>       
+        </div>
     </p-toolbar>
 
     

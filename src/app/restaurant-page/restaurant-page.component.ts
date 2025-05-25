@@ -4,15 +4,22 @@ import { ButtonModule } from 'primeng/button';
 import { IconFieldModule } from 'primeng/iconfield';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TableModule } from 'primeng/table'
 import { CommonModule } from '@angular/common';
 import { AccordionModule } from 'primeng/accordion';
+import { DialogModule } from 'primeng/dialog';
+import { FloatLabel } from 'primeng/floatlabel';
+import { TextareaModule } from 'primeng/textarea';
 
 
 @Component({
   selector: 'app-restaurant-page',
-  imports: [TopSearchComponent, ButtonModule, IconFieldModule, RatingModule, FormsModule, RouterLink, TableModule, CommonModule, AccordionModule],
+  imports: [TopSearchComponent, ButtonModule, IconFieldModule, 
+            RatingModule, FormsModule, RouterLink, TableModule,
+            CommonModule, AccordionModule, DialogModule, TextareaModule,
+            FloatLabel
+          ],
   templateUrl: './restaurant-page.component.html',
   styleUrl: './restaurant-page.component.css'
 })
@@ -20,8 +27,17 @@ export class RestaurantPageComponent implements OnInit{
   
   restaurants: any[] = [];
   selectedRestaurant: any;
+  visible: boolean = false;
 
-  constructor(private route: ActivatedRoute) {}
+  showDialog() {
+    this.visible = true;
+  }
+  hideDialog() {
+    this.visible = false;
+  }
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
   
   ngOnInit() {
     const urlID = this.route.snapshot.paramMap.get('id');
@@ -164,20 +180,20 @@ export class RestaurantPageComponent implements OnInit{
     };
 
     getHoursArray(): { day : String, hours: String} [] {
-          return Object.keys(this.selectedRestaurant.hours).map(day =>({
-            day: day,
-            hours: this.selectedRestaurant.hours[day],
-          }));
-        }
+      return Object.keys(this.selectedRestaurant.hours).map(day =>({
+        day: day,
+        hours: this.selectedRestaurant.hours[day],
+      }));
+    };
     
     get value() : number {
       return this.selectedRestaurant ? this.selectedRestaurant.rating : 0;
-    }
+    };
     
     set value(rating: number) {
       if(this.selectedRestaurant) {
         this.selectedRestaurant.rating = rating;
       }
-    }
-  
+    };
 }
+  

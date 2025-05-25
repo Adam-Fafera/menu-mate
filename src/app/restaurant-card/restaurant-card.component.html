@@ -4,7 +4,7 @@
             <img alt="Card" class="h-48 w-full object-cover" src={{restaurant.img}} />
         </ng-template>
         <ng-template #title> {{restaurant.name}} </ng-template>
-        <ng-template #subtitle> <p-rating [(ngModel)]="restaurant.rating" [readonly]="true"></p-rating> {{restaurant.rating}} </ng-template>
+        <ng-template #subtitle> <p-rating [(ngModel)]="restaurant.rating" [readonly]="true"></p-rating> {{restaurant.rating}}/5 </ng-template>
         <p>
             {{restaurant.description}}
         </p>

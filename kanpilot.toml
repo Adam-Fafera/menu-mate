@@ -7,17 +7,6 @@ id = "process1"
 name = "To Do"
 
   [[processes.tasks]]
-  id = "gbyk4g7xfwvc2a7oqiy51ipo"
-  title = "Populate restaurant page with menu items"
-  description = ""
-  tag = "backlog"
-  linkFiles = [ ]
-  dueDate = ""
-  checkList = [ ]
-  priority = ""
-  linkCommits = [ ]
-
-  [[processes.tasks]]
   id = "zwxgkgwmt2g3jox6x71gtvs9"
   title = "Restaurant page banner upload"
   description = "the picture should be of aspect ratio 5:1 for best quality"
@@ -28,20 +17,45 @@ name = "To Do"
   priority = ""
   linkCommits = [ ]
 
-[[processes]]
-id = "process2"
-name = "In Progress"
-
   [[processes.tasks]]
-  id = "task2"
-  title = "This is a bug should be repair"
+  id = "eyyytp0voa8yf1w920dk4usz"
+  title = "User page"
   description = ""
-  tag = "bug"
+  tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
   checkList = [ ]
   priority = ""
   linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "sb4tgi5qzhswvbsdizzsqwcr"
+  title = "Proposing changes on restaurant page"
+  description = ""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+  [[processes.tasks]]
+  id = "yjteq0ft06fuabwtbz9ewr53"
+  title = "Slight change on viewing restaurant page"
+  description = """
+Make the banner and font little smaller to make the restaurant items be the center of attention
+"""
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
+
+[[processes]]
+id = "process2"
+name = "In Progress"
+tasks = [ ]
 
 [[processes]]
 id = "process3"
