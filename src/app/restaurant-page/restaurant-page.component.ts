@@ -4,7 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { IconFieldModule } from 'primeng/iconfield';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TableModule } from 'primeng/table'
 import { CommonModule } from '@angular/common';
 import { AccordionModule } from 'primeng/accordion';
@@ -16,7 +16,7 @@ import { TextareaModule } from 'primeng/textarea';
 @Component({
   selector: 'app-restaurant-page',
   imports: [TopSearchComponent, ButtonModule, IconFieldModule, 
-            RatingModule, FormsModule, RouterLink, TableModule,
+            RatingModule, FormsModule, TableModule,
             CommonModule, AccordionModule, DialogModule, TextareaModule,
             FloatLabel
           ],

@@ -28,20 +28,20 @@ name = "To Do"
   priority = ""
   linkCommits = [ ]
 
-[[processes]]
-id = "process2"
-name = "In Progress"
-
   [[processes.tasks]]
-  id = "eyyytp0voa8yf1w920dk4usz"
-  title = "User page"
-  description = "<p><strong>MY Description of the task</strong></p>"
+  id = "kzvbg1ks4xc7zi8q9q96w89m"
+  title = "Delete title in hours open (unnecesarry)"
+  description = ""
   tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
   checkList = [ ]
   priority = ""
   linkCommits = [ ]
+
+[[processes]]
+id = "process2"
+name = "In Progress"
 
   [[processes.tasks]]
   id = "yjteq0ft06fuabwtbz9ewr53"
@@ -59,4 +59,14 @@ Make the banner and font little smaller to make the restaurant items be the cent
 [[processes]]
 id = "process3"
 name = "Done"
-tasks = [ ]
+
+  [[processes.tasks]]
+  id = "eyyytp0voa8yf1w920dk4usz"
+  title = "User page"
+  description = "<p><strong>MY Description of the task</strong></p>"
+  tag = "backlog"
+  linkFiles = [ ]
+  dueDate = ""
+  checkList = [ ]
+  priority = ""
+  linkCommits = [ ]
