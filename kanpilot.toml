@@ -18,8 +18,8 @@ name = "To Do"
   linkCommits = [ ]
 
   [[processes.tasks]]
-  id = "eyyytp0voa8yf1w920dk4usz"
-  title = "User page"
+  id = "sb4tgi5qzhswvbsdizzsqwcr"
+  title = "Proposing changes on restaurant page"
   description = ""
   tag = "backlog"
   linkFiles = [ ]
@@ -28,10 +28,14 @@ name = "To Do"
   priority = ""
   linkCommits = [ ]
 
+[[processes]]
+id = "process2"
+name = "In Progress"
+
   [[processes.tasks]]
-  id = "sb4tgi5qzhswvbsdizzsqwcr"
-  title = "Proposing changes on restaurant page"
-  description = ""
+  id = "eyyytp0voa8yf1w920dk4usz"
+  title = "User page"
+  description = "<p><strong>MY Description of the task</strong></p>"
   tag = "backlog"
   linkFiles = [ ]
   dueDate = ""
@@ -43,7 +47,7 @@ name = "To Do"
   id = "yjteq0ft06fuabwtbz9ewr53"
   title = "Slight change on viewing restaurant page"
   description = """
-Make the banner and font little smaller to make the restaurant items be the center of attention
+Make the banner and font little smaller to make the restaurant items be the center of attention\r
 """
   tag = "backlog"
   linkFiles = [ ]
@@ -51,11 +55,6 @@ Make the banner and font little smaller to make the restaurant items be the cent
   checkList = [ ]
   priority = ""
   linkCommits = [ ]
-
-[[processes]]
-id = "process2"
-name = "In Progress"
-tasks = [ ]
 
 [[processes]]
 id = "process3"

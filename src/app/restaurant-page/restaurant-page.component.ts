@@ -27,14 +27,23 @@ export class RestaurantPageComponent implements OnInit{
   
   restaurants: any[] = [];
   selectedRestaurant: any;
-  visible: boolean = false;
+  visibleReview: boolean = false;
+  visibleAllReviews: boolean = false;
 
-  showDialog() {
-    this.visible = true;
+  showReviewDialog() {
+    this.visibleReview = true;
   }
-  hideDialog() {
-    this.visible = false;
+  hideReviewDialog() {
+    this.visibleReview = false;
   }
+
+  showAllReviews(){
+    this.visibleAllReviews = true;
+  }
+  hideAllReviews(){
+    this.visibleAllReviews = false;
+  }
+  
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -44,7 +53,7 @@ export class RestaurantPageComponent implements OnInit{
   
     
     if(!urlID){
-      console.error("ID parameter missing in URL");
+      console.error("Restaurant with this ID doesn't exist");
       return;
     }
 

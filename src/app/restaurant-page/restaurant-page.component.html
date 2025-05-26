@@ -3,11 +3,8 @@
     
 </div>
 <div class="static mx-auto place-content-center w-3/4 surface-card p-4 shadow-2 border-round">
-    <div class="mb-3">
-        <p-button routerLink="/browse" class="h-48 content-center"> <i class="pi pi-arrow-left"></i></p-button>
-    </div>
     <div class="relative h-1/12">
-        <img alt="Card" class="rounded-md h-48 w-full object-cover" src={{selectedRestaurant.img}} />
+        <img alt="Card" class="rounded-md h-36 w-full object-cover" src={{selectedRestaurant.img}} />
     </div>
 
     <div class="text-4xl font-medium mt-3 text-900 mb-3"> {{selectedRestaurant.name}} </div>
@@ -52,9 +49,10 @@
         </p-accordion>
         </div>
         
-        <div class="col-span-1 col-start-4 content-center" >
+        <div class="col-span-1 col-start-4 content-center cursor-pointer" (click)="showAllReviews()" >
             <p-rating [(ngModel)]="value" [readonly]="true"/><h1 >{{selectedRestaurant.rating}} / 5 &nbsp;&nbsp;&nbsp;&nbsp; <div class="text-stone-400">{{selectedRestaurant.reviewCount}} reviews</div></h1> 
         </div>
+        
 
         <div>
             <div>
@@ -67,30 +65,47 @@
                 {{selectedRestaurant.phone}}
             </div>
         </div>
-        
-        <p-button (click)="showDialog()" class="col-span-1 col-start-4 content-center"><i class="pi pi-send"> </i> Write a review</p-button>
-        <p-dialog header="Review" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+        <!-- Turn this review part into component -->
+        <p-button (click)="showReviewDialog()" class="col-span-1 col-start-4 content-center"><i class="pi pi-send"> </i> Write a review</p-button>
+
+        <p-dialog header="Review" [modal]="true" [(visible)]="visibleReview" [style]="{ width: '25rem' }">
             <span class="p-text-secondary block mb-8">Leave {{selectedRestaurant.name}} a review.</span>
             <div class="flex items-center gap-4 mb-4"> 
-                <label for="title" class="font-semibold w-24">Title</label>
+                <label for="title" class="font-semibold w-24">Title*</label>
                 <input pInputText id="title" class="flex-auto" autocomplete="off" />
                 <p-rating class="flex-auto" ></p-rating>
             </div>
             <div class="flex items-center gap-5 mb-8">
                 <p-floatlabel variant="on">
                     <label for="review" class="font-semibold w-24">Description</label>
-                    <textarea rows="8" cols="37" id="review" class="flex-auto" autocomplete="off" > </textarea>
+                    <textarea rows="8" cols="37" id="review" class="flex-auto" autocomplete="off" pTextarea [autoResize]="true"> </textarea>
                 </p-floatlabel>
             </div>
             <div class="flex justify-end gap-2">
-                    <p-button label="Cancel" severity="secondary" (click)="visible = false" />
-                    <p-button label="Post" (click)="visible = false" />
+                    <p-button label="Cancel" severity="secondary" (click)="visibleReview = false" />
+                    <p-button label="Post" (click)="visibleReview = false" ><i class="pi pi-send"></i> </p-button>
+            </div>
+        </p-dialog>
+        
+        <!-- Turn this review part into component as well-->
+
+        <p-dialog header="All Reviews" [modal]="true" [(visible)]="visibleAllReviews" [style]="{ width: '40rem' }">
+            <span class="p-text-secondary block mb-8">All of {{selectedRestaurant.name}}'s {{selectedRestaurant.reviewCount}} reviews</span>
+            <div class="flex items-center gap-4 mb-4"> 
+                <p class="font-bold w-24"> Całkiem ok</p>
+                <p-rating [(ngModel)]="value" class="flex-auto" [readonly]="true"></p-rating>
+            </div>
+            <div class="flex items-center gap-5 mb-8">
+                <p>Naprawde spoko restauracja, ok cena, super obsluga, nic tylko wraca</p>
+            </div>
+            <div class="flex justify-end gap-2">             
+                <p-button label="Ok" (click)="hideAllReviews()"> <i class="pi pi-check"></i></p-button>
             </div>
         </p-dialog>
 
     </div>
     
     <!-- menu items here  -->
-    <div class="mt-10 flex flex-row justify-center h-52 items-center bg-slate-800 rounded-3xl"><strong> Put menu items here</strong></div>
+    <div class="mt-10 flex flex-row justify-center h-52 items-center bg-slate-800 rounded-3xl"><strong> Put menu items here </strong></div>
     
 </div>
