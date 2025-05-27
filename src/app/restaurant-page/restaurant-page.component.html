@@ -104,10 +104,9 @@
         </p-dialog>
 
     </div>
-    
-    <!-- menu items here  -->
-    <div class="mt-10 flex flex-row justify-center h-full items-center bg-slate-800 rounded-3xl"> 
-        <app-menu-item-card class="m-3" *ngFor="let item of items"></app-menu-item-card>
-    </div>
+    <div class="grid grid-cols-3 w-screenitems-center justify-center rounded-3xl bg-zinc-950"> 
+    <app-menu-item-card class="m-3" *ngFor="let item of items"></app-menu-item-card>
+</div>
     
 </div>
+
