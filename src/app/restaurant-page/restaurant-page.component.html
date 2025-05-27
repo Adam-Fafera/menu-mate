@@ -96,7 +96,7 @@
                 <p-rating [(ngModel)]="value" class="flex-auto" [readonly]="true"></p-rating>
             </div>
             <div class="flex items-center gap-5 mb-8">
-                <p>Naprawde spoko restauracja, ok cena, super obsluga, nic tylko wraca</p>
+                <p>Naprawde spoko restauracja, ok cena, super obsluga, nic tylko wracac</p>
             </div>
             <div class="flex justify-end gap-2">             
                 <p-button label="Ok" (click)="hideAllReviews()"> <i class="pi pi-check"></i></p-button>
@@ -106,6 +106,8 @@
     </div>
     
     <!-- menu items here  -->
-    <div class="mt-10 flex flex-row justify-center h-52 items-center bg-slate-800 rounded-3xl"><strong> Put menu items here </strong></div>
+    <div class="mt-10 flex flex-row justify-center h-full items-center bg-slate-800 rounded-3xl"> 
+        <app-menu-item-card class="m-3" *ngFor="let item of items"></app-menu-item-card>
+    </div>
     
 </div>

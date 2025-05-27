@@ -11,21 +11,23 @@ import { AccordionModule } from 'primeng/accordion';
 import { DialogModule } from 'primeng/dialog';
 import { FloatLabel } from 'primeng/floatlabel';
 import { TextareaModule } from 'primeng/textarea';
+import { MenuItemCardComponent } from "../menu-item-card/menu-item-card.component";
+
 
 
 @Component({
   selector: 'app-restaurant-page',
-  imports: [TopSearchComponent, ButtonModule, IconFieldModule, 
-            RatingModule, FormsModule, TableModule,
-            CommonModule, AccordionModule, DialogModule, TextareaModule,
-            FloatLabel
-          ],
+  imports: [TopSearchComponent, ButtonModule, IconFieldModule,
+    RatingModule, FormsModule, TableModule,
+    CommonModule, AccordionModule, DialogModule, TextareaModule,
+    FloatLabel, MenuItemCardComponent],
   templateUrl: './restaurant-page.component.html',
   styleUrl: './restaurant-page.component.css'
 })
 export class RestaurantPageComponent implements OnInit{
   
   restaurants: any[] = [];
+  items: any[] = [];
   selectedRestaurant: any;
   visibleReview: boolean = false;
   visibleAllReviews: boolean = false;
@@ -56,6 +58,54 @@ export class RestaurantPageComponent implements OnInit{
       console.error("Restaurant with this ID doesn't exist");
       return;
     }
+
+      this.items = [
+        {
+          id: 1,
+          name: 'Sandwich',
+          price: 21.99,
+          rating: 3,
+          alergens: 'nuts',
+          proteins: '2g',
+          carbohydrates: '3g',
+          fats: '1g',
+          description: 'A really tasty teriyaki chicken sandwich',
+        },
+        {
+          id: 2,
+          name: 'Salad',
+          price: 15.50,
+          rating: 4,
+          alergens: null,
+          proteins: '5g',
+          carbohydrates: '8g',
+          fats: '2g',
+          description: 'Fresh garden salad with a light vinaigrette',
+        },
+        {
+          id: 3,
+          name: 'Soup',
+          price: 12.00,
+          rating: 5,
+          alergens: 'dairy',
+          proteins: '3g',
+          carbohydrates: '10g',
+          fats: '4g',
+          description: 'Creamy tomato soup with basil',
+        },
+        {
+          id: 4,
+          name: 'Pasta',
+          price: 25.00,
+          rating: 4,
+          alergens: 'gluten',
+          proteins: '7g',
+          carbohydrates: '30g',
+          fats: '6g',
+          description: 'Spaghetti with a rich bolognese sauce',
+        },
+      ];
+
 
       this.restaurants = [
         {
@@ -185,6 +235,8 @@ export class RestaurantPageComponent implements OnInit{
         },
       ];
 
+
+      
       this.selectedRestaurant = this.restaurants.find(restaurant => restaurant.id === parseFloat(urlID));         
     };
 
