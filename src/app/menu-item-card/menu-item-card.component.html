@@ -1,4 +1,4 @@
-<p-card onclick="console.log('Clicked on the card')" [style]="{ width: '18rem', overflow: 'hidden' }" class="cursor-pointer">
+<p-card (click)="showDialog()" [style]="{ width: '18rem', overflow: 'hidden' }" class="cursor-pointer">
     <ng-template #header>
         <img alt="Card" class="h-32 w-full object-cover" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
     </ng-template>
@@ -10,3 +10,46 @@
         </p>
     </div>
 </p-card>
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '25rem' }">
+    <ng-template #header>
+        <div class="inline-flex items-center justify-center gap-2">
+            <span class="font-bold text-2xl whitespace-nowrap">Menu item name</span>
+        </div>
+    </ng-template>
+    <p-tabs value="0">
+        <p-tablist>
+            <p-tab value="0">Header I</p-tab>
+            <p-tab value="1">Nutrition Facts</p-tab>
+        </p-tablist>
+        <p-tabpanels>
+            <p-tabpanel value="0">
+                <p class="m-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua.
+                </p>
+            </p-tabpanel>
+            <p-tabpanel value="1">
+                <p class="m-0">
+                    <p-table [value]="products" showGridlines="" [tableStyle]="{ 'min-width': '20rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template #body let-product>
+                            <tr>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.category }}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>                   
+                </p>
+            </p-tabpanel>
+        </p-tabpanels>
+    </p-tabs>
+    <!-- <ng-template #footer>
+        <p-button label="Cancel" [text]="true" severity="secondary" (click)="visible = false" />
+        <p-button label="Save" [outlined]="true" severity="secondary" (click)="visible = false" />
+    </ng-template> -->
+</p-dialog>
