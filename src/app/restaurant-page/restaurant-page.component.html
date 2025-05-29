@@ -67,27 +67,34 @@
         </div>
         <!-- Turn this review part into component -->
         <div class="col-span-1 col-start-4 content-center">
-            <p-button (click)="showReviewDialog()"><i class="pi pi-send"> </i> Write a review</p-button>
-            <p-button class="ml-3"><i class="pi pi-file-edit"></i> Propose changes</p-button>
+            <div class="grid grid-rows-2 grid-cols-1 content-center">
+                <p-button (click)="showReviewDialog()"><i class="pi pi-send"> </i> Write a review</p-button>
+                <p-button class="mt-3"><i class="pi pi-file-edit"></i> Propose edits</p-button>
+            </div>
         </div>
+
+
         <p-dialog header="Review" [modal]="true" [(visible)]="visibleReview" [style]="{ width: '35rem' }">
             <span class="p-text-secondary block mb-8">Leave {{selectedRestaurant.name}} a review.</span>
             <div class="flex items-center gap-4 mb-4"> 
-                <label for="title" class="font-semibold w-24">Title*</label>
+                <label for="title" class="font-semibold ">Title*</label>
                 <input pInputText id="title" class="flex-auto" autocomplete="off" />
                 <p-rating class="flex-auto" ></p-rating>
             </div>
             <div class="flex items-center gap-5 mb-8">
                 <p-floatlabel variant="in">
                     <label for="review" class="font-semibold w-24">Description</label>
-                    <textarea rows="8" cols="67" id="review" class="flex-auto bg-gray-100" autocomplete="off" pTextarea [autoResize]="true"> </textarea>
+                    <textarea rows="8" cols="50" id="review" class="flex-auto " autocomplete="off" pTextarea [autoResize]="true"> </textarea>
                 </p-floatlabel>
             </div>
-            <div class="flex justify-end gap-2">
-                    <p-button label="Cancel" severity="secondary" (click)="visibleReview = false" />
-                    <p-button label="Post" (click)="visibleReview = false" ><i class="pi pi-send"></i> </p-button>
+            <div class="flex justify-end gap-2">                    
+                    <p-button label="Cancel" severity="secondary" (click)=" visibleReview = false;" />
+                    <p-button label="Post" (click)="reviewPosted();visibleReview = false" ><i class="pi pi-send"></i> </p-button>
             </div>
+            
         </p-dialog>
+        
+        <p-toast/>
         
         <!-- Turn this review part into component as well-->
 
