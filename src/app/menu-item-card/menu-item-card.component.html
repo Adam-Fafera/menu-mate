@@ -1,19 +1,21 @@
-<p-card (click)="showDialog()" [style]="{ width: '18rem', overflow: 'hidden' }" class="cursor-pointer">
-    <ng-template #header>
-        <img alt="Card" class="h-32 w-full object-cover" src="https://pl.vihaad.com/wp-content/uploads/2024/11/Doner-Kebab-najlepsze-miejsce-w-Twoim-miescie.webp" />
-    </ng-template>
-    <ng-template #title> Menu item name </ng-template>
-    <ng-template #subtitle> $5.99 </ng-template>
-    <div>
-        <p>
-            Super duper ultra kebabes, z mięsem wołowym, kurczakiem lub mieszanym, świeżymi warzywami oraz z sosem do wyboru. 
-        </p>
-    </div>
-</p-card>
-<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '30rem' }">
+<div class="flex justify-center mt-3 mb-3 ml-1 mr-1">
+    <p-card (click)="showDialog()" [style]="{ width: '18rem', overflow: 'hidden' }" class="hover:cursor-pointer hover:drop-shadow-2xl hover:shadow-white-lg rounded-xl hover:brightness-[1.15]     ">
+        <ng-template #header>
+            <img alt="Card" class="h-32 w-full object-cover" src="https://pl.vihaad.com/wp-content/uploads/2024/11/Doner-Kebab-najlepsze-miejsce-w-Twoim-miescie.webp" />
+        </ng-template>
+        <ng-template #title> {{items[0].name}} </ng-template>
+        <ng-template #subtitle> {{items[0].price}} {{items[0].currency}}</ng-template>
+        <div>
+            <p>
+                {{items[0].description}} 
+            </p>
+        </div>
+    </p-card>
+</div>
+<p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '35rem' }">
     <ng-template #header>
         <div class="inline-flex items-center justify-center gap-2">
-            <span class="font-bold text-2xl whitespace-nowrap">Menu item name</span>
+            <span class="font-bold text-2xl whitespace-nowrap">{{items[0].name}}</span>
         </div>
     </ng-template>
     <p-tabs value="0">
@@ -26,10 +28,10 @@
             <p-tabpanel value="0">
                 <img alt="" class="h-72 w-full rounded-lg object-cover" src="https://pl.vihaad.com/wp-content/uploads/2024/11/Doner-Kebab-najlepsze-miejsce-w-Twoim-miescie.webp" />
                 <p class="mt-3 text-2xl">
-                    25.99 zł
+                    {{items[0].price}} {{items[0].currency}}
                 </p>
                 <p class="mt-3">
-                    Super duper ultra kebabes, z mięsem wołowym, kurczakiem lub mieszanym, świeżymi warzywami oraz z sosem do wyboru.
+                    {{items[0].description}}
                 </p>
             </p-tabpanel>
             <p-tabpanel value="1">
