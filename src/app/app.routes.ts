@@ -13,8 +13,8 @@ export const routes: Routes = [
     {path: 'review ', component: ReviewComponent},
     {path: 'user', component: UserPageComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'dashboard', component: RestaurantDashboardComponent},
-    
+    {path: 'dashboard/:id', component: RestaurantDashboardComponent},
+
     {path: '', redirectTo: 'browse', pathMatch: 'full'},
     {path: '**', component: PageNotFoundComponent},
     
