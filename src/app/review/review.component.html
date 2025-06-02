@@ -1,8 +1,7 @@
-<p>review works!</p>
-
-<div class="card flex justify-center">
-    <p-iftalabel>
-        <textarea pTextarea id="description" [(ngModel)]="value" rows="5" cols="30" style="resize: none"></textarea>
-        <label for="description">Description</label>
-    </p-iftalabel>
+<div class="flex items-center gap-4 mb-4"> 
+    <p class="font-bold w-24"> Całkiem ok</p>
+    <p-rating [(ngModel)]="value" class="flex-auto" [readonly]="true"></p-rating>
+</div>
+<div class="flex items-center gap-5 mb-8">
+    <p>Naprawde spoko restauracja, ok cena, super obsluga, nic tylko wracac</p>
 </div>

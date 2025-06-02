@@ -6,10 +6,11 @@ import { TabsModule } from 'primeng/tabs';
 import { TableModule } from 'primeng/table';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import { ReviewComponent } from "../review/review.component";
 
 @Component({
   selector: 'app-menu-item-card',
-  imports: [CardModule, ButtonModule, DialogModule, TabsModule, TableModule, RatingModule, FormsModule],
+  imports: [CardModule, ButtonModule, DialogModule, TabsModule, TableModule, RatingModule, FormsModule, ReviewComponent],
   templateUrl: './menu-item-card.component.html',
   styleUrl: './menu-item-card.component.css'
 })
