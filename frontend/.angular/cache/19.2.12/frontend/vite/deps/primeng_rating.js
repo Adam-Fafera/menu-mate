@@ -3,6 +3,9 @@ import {
 } from "./chunk-O7GYSXZK.js";
 import "./chunk-5G7WYC4N.js";
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-JKJKFYY3.js";
+import {
   StarFillIcon,
   StarIcon
 } from "./chunk-6DDEEH6N.js";
@@ -12,9 +15,6 @@ import {
 import {
   BaseStyle
 } from "./chunk-PQ2U6TIQ.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-JKJKFYY3.js";
 import {
   PrimeTemplate,
   SharedModule,
