@@ -12,6 +12,8 @@ import { DialogModule } from 'primeng/dialog';
 import { FloatLabel } from 'primeng/floatlabel';
 import { TextareaModule } from 'primeng/textarea';
 import { MenuItemCardComponent } from "../menu-item-card/menu-item-card.component";
+import { Toast } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 
 
@@ -20,9 +22,10 @@ import { MenuItemCardComponent } from "../menu-item-card/menu-item-card.componen
   imports: [TopSearchComponent, ButtonModule, IconFieldModule,
     RatingModule, FormsModule, TableModule,
     CommonModule, AccordionModule, DialogModule, TextareaModule,
-    FloatLabel, MenuItemCardComponent],
+    FloatLabel, MenuItemCardComponent, Toast],
   templateUrl: './restaurant-page.component.html',
-  styleUrl: './restaurant-page.component.css'
+  styleUrl: './restaurant-page.component.css',
+  providers: [MessageService]
 })
 export class RestaurantPageComponent implements OnInit{
   
@@ -45,9 +48,14 @@ export class RestaurantPageComponent implements OnInit{
   hideAllReviews(){
     this.visibleAllReviews = false;
   }
+
+  reviewPosted() {
+    console.log('Review clicked')
+    this.messageService.add({severity:'success', summary: "Success", detail:"Review posted"})
+  }
   
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router, private messageService: MessageService) {}
 
   
   ngOnInit() {
