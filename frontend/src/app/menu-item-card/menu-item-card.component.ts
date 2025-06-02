@@ -23,26 +23,6 @@ export class MenuItemCardComponent {
     console.log('Clicked on the card');
   }
 
-  products = [
-    {
-      name: 'Calories (kcal)',
-      category: 280,
-    },
-    {
-      name: 'Fats (g)',
-      category: 9,
-    },
-    {
-      name: 'Carbohydrates (g)',
-      category: 34,
-    },
-    {
-      name: 'Protein (g)',
-      category: 15,
-    },
-
-  ];
-
   items = [
     {
       restaurantId: 2,
@@ -59,8 +39,6 @@ export class MenuItemCardComponent {
       description: 'Super duper ultra kebabes, z mięsem wołowym, kurczakiem lub mieszanym, świeżymi warzywami oraz z sosem do wyboru.',
       image: "https://pl.vihaad.com/wp-content/uploads/2024/11/Doner-Kebab-najlepsze-miejsce-w-Twoim-miescie.webp"
     },
-    {
 
-    }
   ]
 }
