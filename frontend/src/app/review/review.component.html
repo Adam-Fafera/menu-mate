@@ -1,7 +1,13 @@
-<div class="flex items-center gap-4 mb-4"> 
-    <p class="font-bold w-24"> Całkiem ok</p>
-    <p-rating [(ngModel)]="value" class="flex-auto" [readonly]="true"></p-rating>
-</div>
-<div class="flex items-center gap-5 mb-8">
-    <p>Naprawde spoko restauracja, ok cena, super obsluga, nic tylko wracac</p>
+<div *ngFor="let review of reviews">
+    <div class="flex items-end gap-2 mb-3">
+        <p-avatar shape="circle" image="{{review.userImg}}" />
+        <p class="text-zinc-400"> {{review.userName}}</p>
+    </div>
+    <div class="flex items-center gap-2 mb-1"> 
+        <p class="font-bold w-24"> {{review.reviewTitle}}</p>
+        <p-rating [(ngModel)]="review.reviewRating" class="flex-auto" [readonly]="true"></p-rating>
+    </div>
+    <div class="flex items-center gap-5 mb-8">
+        <p>{{review.description}}</p>
+    </div>
 </div>
