@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
 import { MenuModule } from 'primeng/menu';
@@ -14,6 +15,8 @@ export class SideMenuComponent implements OnInit{
   items : MenuItem[] | undefined;
   options : MenuItem[] | undefined;
 
+  constructor(private router : Router ) {}
+
   ngOnInit(){
     this.items = [
       {label: 'Home', icon:'pi pi-home'},
@@ -24,11 +27,13 @@ export class SideMenuComponent implements OnInit{
     ];
 
     this.options = [
-      {label:'Sign out', icon:'pi pi-sign-out' },
+      {label:'Sign out', icon:'pi pi-sign-out', command: () => {this.signOut()} },
 
-    ]
+    ];
+  }
 
-
+  signOut() {
+    this.router.navigate(['/login']);
   }
 
 
