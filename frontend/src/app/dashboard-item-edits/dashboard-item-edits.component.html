@@ -14,8 +14,8 @@
                         {{change.new}}
                     </div>
                     <div class="p-3 flex justify-center ">
-                        <p-button class="m-1"><i class="pi pi-check"></i></p-button>
-                        <p-button severity="danger" class="m-1"><i class="pi pi-times"></i></p-button>
+                        <p-button (click)="showSuccess()" class="m-1"><i class="pi pi-check"></i></p-button>
+                        <p-button (click)="showReject()" severity="danger" class="m-1"><i class="pi pi-times"></i></p-button>
                     </div>
                 </div>
                     

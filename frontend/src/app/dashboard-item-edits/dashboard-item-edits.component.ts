@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
@@ -9,6 +10,8 @@ import { CardModule } from 'primeng/card';
   styleUrl: './dashboard-item-edits.component.css'
 })
 export class DashboardItemEditsComponent implements OnInit{
+
+  constructor(private messageService: MessageService) {}
 
   changes: any[] = [];
 
@@ -49,6 +52,14 @@ export class DashboardItemEditsComponent implements OnInit{
 
   rejectChange(){
     console.log('rejected change');
+  }
+
+  showSuccess() {
+    this.messageService.add({severity: 'Success', summary: 'Confirmed', detail: 'You accepted the change'})
+  }
+
+  showReject() {
+    this.messageService.add({severity: 'Error', summary: 'Rejected', detail: 'You rejected the change'})
   }
 
 }

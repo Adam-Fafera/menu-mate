@@ -1,27 +1,27 @@
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-L45ATF4A.js";
+import {
   AutoFocus
-} from "./chunk-O7GYSXZK.js";
+} from "./chunk-5D5L7GIQ.js";
 import "./chunk-5G7WYC4N.js";
 import {
   StarFillIcon,
   StarIcon
-} from "./chunk-6DDEEH6N.js";
+} from "./chunk-QTASYSTT.js";
 import {
   BaseComponent
-} from "./chunk-RHUCIING.js";
+} from "./chunk-OW5WFU2K.js";
 import {
   BaseStyle
-} from "./chunk-PQ2U6TIQ.js";
+} from "./chunk-DN2EO6DW.js";
 import {
   PrimeTemplate,
   SharedModule,
   focus,
   getFirstFocusableElement,
   uuid
-} from "./chunk-RA2TSF4P.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-JKJKFYY3.js";
+} from "./chunk-YLBEBIJC.js";
 import {
   CommonModule,
   NgClass,
@@ -29,7 +29,7 @@ import {
   NgIf,
   NgStyle,
   NgTemplateOutlet
-} from "./chunk-RBTQK5UD.js";
+} from "./chunk-RPEKHEIL.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -76,7 +76,8 @@ import {
   ɵɵrestoreView,
   ɵɵtemplate,
   ɵɵtemplateRefExtractor
-} from "./chunk-TYWYC7CF.js";
+} from "./chunk-Z5C32KRW.js";
+import "./chunk-HM5YLMWO.js";
 import "./chunk-WDMUDEB6.js";
 
 // node_modules/primeng/fesm2022/primeng-rating.mjs

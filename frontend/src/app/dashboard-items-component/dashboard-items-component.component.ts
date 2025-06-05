@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { BadgeModule } from 'primeng/badge';
 import { CardModule } from 'primeng/card';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-dashboard-items-component',
-  imports: [CardModule, BadgeModule],
+  imports: [CardModule, BadgeModule, ToastModule],
   templateUrl: './dashboard-items-component.component.html',
   styleUrl: './dashboard-items-component.component.css'
 })
@@ -12,12 +15,15 @@ export class DashboardItemsComponentComponent implements OnInit {
   
   items : any[] = [];
 
+  constructor(private router : Router) {}
+
+
   ngOnInit(): void {
   
     this.items = [
         {
           id: 1,
-          name: 'Sandwich',
+          name: 'Sandwich with teriyaki chicken with an even longer name',
           price: 21.99,
           currency: 'zł',
           rating: 3,
@@ -74,9 +80,9 @@ export class DashboardItemsComponentComponent implements OnInit {
       ];
 
   }
-  
-  goToItem() {
-    console.log("Go to item works");
-  }
 
+  goToItem() {
+    // {current url}/{itemID}
+    this.router.navigate(['/dashboard/1/item-edits/1']);
+  }
 }
