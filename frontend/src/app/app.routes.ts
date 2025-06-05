@@ -10,6 +10,8 @@ import { RestaurantDashboardEditsComponent } from './restaurant-dashboard-edits/
 import { RestaurantDashboardReviewsComponent } from './restaurant-dashboard-reviews/restaurant-dashboard-reviews.component';
 import { RestaurantDashboardItemReviewsComponent } from './restaurant-dashboard-item-reviews/restaurant-dashboard-item-reviews.component';
 import { RestaurantDashboardItemEditsComponent } from './restaurant-dashboard-item-edits/restaurant-dashboard-item-edits.component';
+import { RestaurantDashboardItemEditsCheckComponent } from './restaurant-dashboard-item-edits-check/restaurant-dashboard-item-edits-check.component';
+import { RestaurantDashboardItemReviewsCheckComponent } from './restaurant-dashboard-item-reviews-check/restaurant-dashboard-item-reviews-check.component';
 
 export const routes: Routes = [
     // user paths
@@ -25,7 +27,9 @@ export const routes: Routes = [
     {path: 'dashboard/:id/edits', component: RestaurantDashboardEditsComponent},
     {path: 'dashboard/:id/reviews', component: RestaurantDashboardReviewsComponent},
     {path: 'dashboard/:id/item-edits', component: RestaurantDashboardItemEditsComponent},
+    {path: 'dashboard/:id/item-edits/:id', component: RestaurantDashboardItemEditsCheckComponent},
     {path: 'dashboard/:id/item-reviews', component: RestaurantDashboardItemReviewsComponent},
+    {path: 'dashboard/:id/item-reviews/:id', component: RestaurantDashboardItemReviewsCheckComponent},
 
     
     {path: '**', component: PageNotFoundComponent},

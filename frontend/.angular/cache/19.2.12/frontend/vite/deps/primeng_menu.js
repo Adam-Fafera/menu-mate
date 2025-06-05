@@ -5,10 +5,19 @@ import {
 import {
   ConnectedOverlayScrollHandler
 } from "./chunk-5G7WYC4N.js";
+import "./chunk-C7TCESGK.js";
 import {
-  Badge,
-  BadgeModule
-} from "./chunk-C4BFNZAR.js";
+  animate,
+  style,
+  transition,
+  trigger
+} from "./chunk-F5CXBDJW.js";
+import {
+  zindexutils
+} from "./chunk-5H5CNZCN.js";
+import {
+  Ripple
+} from "./chunk-7CASXX42.js";
 import {
   RouterLink,
   RouterLinkActive,
@@ -18,19 +27,10 @@ import {
   DomSanitizer
 } from "./chunk-ULB4I7OT.js";
 import "./chunk-NUYG6MXB.js";
-import "./chunk-C7TCESGK.js";
 import {
-  zindexutils
-} from "./chunk-5H5CNZCN.js";
-import {
-  animate,
-  style,
-  transition,
-  trigger
-} from "./chunk-F5CXBDJW.js";
-import {
-  Ripple
-} from "./chunk-7CASXX42.js";
+  Badge,
+  BadgeModule
+} from "./chunk-C4BFNZAR.js";
 import {
   BaseComponent
 } from "./chunk-RHUCIING.js";

@@ -3,9 +3,6 @@ import {
 } from "./chunk-O7GYSXZK.js";
 import "./chunk-5G7WYC4N.js";
 import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-JKJKFYY3.js";
-import {
   StarFillIcon,
   StarIcon
 } from "./chunk-6DDEEH6N.js";
@@ -22,6 +19,9 @@ import {
   getFirstFocusableElement,
   uuid
 } from "./chunk-RA2TSF4P.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-JKJKFYY3.js";
 import {
   CommonModule,
   NgClass,

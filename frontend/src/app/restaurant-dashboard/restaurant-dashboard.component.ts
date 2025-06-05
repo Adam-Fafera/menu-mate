@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
@@ -11,10 +10,14 @@ import { TestComponentComponent } from "../test-component/test-component.compone
 @Component({
   selector: 'app-restaurant-dashboard',
   standalone: true,
-  imports: [MenuModule, ButtonModule, RouterLink, SidebarModule, AvatarModule, SideMenuComponent, TestComponentComponent],
+  imports: [MenuModule, ButtonModule, SidebarModule, AvatarModule, SideMenuComponent, TestComponentComponent],
   templateUrl: './restaurant-dashboard.component.html',
   styleUrl: './restaurant-dashboard.component.css'
 })
 export class RestaurantDashboardComponent{
+
+  goToItem(){
+    console.log("go to item")
+  }
 
 }

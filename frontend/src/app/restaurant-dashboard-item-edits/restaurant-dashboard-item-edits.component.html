@@ -1,25 +1,7 @@
 <div class="flex flex-row">
-    <app-side-menu/>
-    <div class="basis-4/5 bg-zinc-900 p-6 mt-6 mb-3 mr-6 rounded-lg border border-zinc-700">
-
-        <span class="font-semibold text-6xl text-zinc-800">Item edits</span>
-    @for (item of items; track item.id) {
-        <div class="bg-zinc-300 m-3">
-            <p-card>
-                <div class="grid grid-cols-2 grid-rows-1 gap-0">
-                    <img src="{{item.img}}" class="h-full w-1/4 object-cover rounded-lg">
-                    <div class="grid grid-cols-1 gap-0">
-                        <span> {{item.name}} </span>
-                        <span> {{item.price}} </span>
-                        <span> {{item.description}} </span>  
-                    </div>
-                </div>
-                 @if (item.reviews>0) {
-                    <p-badge value="{{item.reviews}}"/>
-                    }
-            </p-card>
-        </div>
-    }
-        
+    <app-side-menu/>    
+    <div class="basis-4/5 p-6 mt-6 mb-3 mr-6 rounded-lg border border-zinc-700"> 
+        <span class="font-semibold text-6xl text-zinc-800 ml-3">Item edits</span>   
+        <app-dashboard-items-component/>
     </div>
 </div> 
