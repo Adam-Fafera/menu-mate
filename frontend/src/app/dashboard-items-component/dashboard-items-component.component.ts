@@ -14,9 +14,9 @@ import { ToastModule } from 'primeng/toast';
 export class DashboardItemsComponentComponent implements OnInit {
   
   items : any[] = [];
+  id : number = 1;
 
   constructor(private router : Router) {}
-
 
   ngOnInit(): void {
   
@@ -82,7 +82,7 @@ export class DashboardItemsComponentComponent implements OnInit {
   }
 
   goToItem() {
-    // {current url}/{itemID}
-    this.router.navigate(['/dashboard/1/item-edits/1']);
+    this.router.navigate([this.router.url+'/'+ this.id]) 
+     
   }
 }

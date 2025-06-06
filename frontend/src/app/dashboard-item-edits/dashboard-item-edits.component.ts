@@ -2,18 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-dashboard-item-edits',
-  imports: [CardModule, ButtonModule],
+  imports: [CardModule, ButtonModule, ToastModule ],
   templateUrl: './dashboard-item-edits.component.html',
-  styleUrl: './dashboard-item-edits.component.css'
+  styleUrl: './dashboard-item-edits.component.css',
+  providers: [MessageService],
 })
 export class DashboardItemEditsComponent implements OnInit{
 
-  constructor(private messageService: MessageService) {}
-
   changes: any[] = [];
+
+  constructor(private messageService : MessageService) {}
 
   ngOnInit(): void {
     
@@ -46,20 +48,15 @@ export class DashboardItemEditsComponent implements OnInit{
 
   }
 
+
   confirmChange() {
-    console.log('confirmed change');
+    console.log('confirmed');
+    this.messageService.add({severity: 'success', summary: 'Confirmed', detail: 'You accepted the change'})
   }
 
-  rejectChange(){
-    console.log('rejected change');
-  }
-
-  showSuccess() {
-    this.messageService.add({severity: 'Success', summary: 'Confirmed', detail: 'You accepted the change'})
-  }
-
-  showReject() {
-    this.messageService.add({severity: 'Error', summary: 'Rejected', detail: 'You rejected the change'})
+  rejectChange() {
+    console.log('rejected');
+    this.messageService.add({severity: 'error', summary: 'Rejected', detail: 'You rejected the change'})
   }
 
 }

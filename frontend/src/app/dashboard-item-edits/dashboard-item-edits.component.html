@@ -1,6 +1,7 @@
- <div class="grid grid-cols-2">    
+
+ <div class="grid grid-cols-2">  
     @for (change of changes; track change.id) {
-        <div class="m-3 hover:brightness-125 hover:shadow-white-lg rounded-xl cursor-pointer">
+        <div class="m-3 hover:brightness-125 hover:shadow-white-lg rounded-xl cursor-pointer border border-zinc-700">
             <p-card>
                 <span class="text-2xl "><strong>{{change.field}}</strong></span>
                 <div class="grid grid-cols-4 grid-rows-1 gap-3 text-xl mt-3">
@@ -14,8 +15,8 @@
                         {{change.new}}
                     </div>
                     <div class="p-3 flex justify-center ">
-                        <p-button (click)="showSuccess()" class="m-1"><i class="pi pi-check"></i></p-button>
-                        <p-button (click)="showReject()" severity="danger" class="m-1"><i class="pi pi-times"></i></p-button>
+                        <p-button (click)="confirmChange()" class="m-1"><i class="pi pi-check"></i></p-button>
+                        <p-button (click)="rejectChange()" severity="danger" class="m-1"><i class="pi pi-times"></i></p-button>
                     </div>
                 </div>
                     
@@ -23,3 +24,4 @@
         </div>
     }   
 </div>
+<p-toast/>

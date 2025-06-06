@@ -39,6 +39,12 @@ export class SideMenuComponent implements OnInit{
           {label: 'Item edits', icon:'pi pi-file-edit', command : () => {this.navigateItemEdits()}},
           {label:'Item reviews', icon:'pi pi-star', badge:'2', command : () => {this.navigateItemReviews()}}, 
         ]
+      },
+      {
+        label: 'Create',
+        items: [
+          {label: 'Add item', icon: 'pi pi-plus', command: () => {this.navigateAddItem()}}
+        ]
       }
     ];
 
@@ -56,22 +62,26 @@ export class SideMenuComponent implements OnInit{
   navigateHome(){
     this.router.navigate(['dashboard/1']);
   }
+  
   navigateEdits(){
     this.router.navigate(['dashboard/1/edits']);
   }
+  
   navigateReviews(){
     this.router.navigate(['dashboard/1/reviews']);
   }
+  
   navigateItemEdits(){
     this.router.navigate(['dashboard/1/item-edits']);
   }
+  
   navigateItemReviews(){
     this.router.navigate(['dashboard/1/item-reviews']);
   }
 
-
-
-
+  navigateAddItem(){
+    this.router.navigate(['dashboard/1/add-item']);
+  }
 
   signOut() {
   this.router.navigate(['login']);
