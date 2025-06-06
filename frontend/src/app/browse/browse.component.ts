@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RestaurantCardComponent } from '../restaurant-card/restaurant-card.component';
 import { TopSearchComponent } from "../top-search/top-search.component";
-import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-browse',
   standalone: true,
-  imports: [RestaurantCardComponent, TopSearchComponent, CommonModule],
+  imports: [RestaurantCardComponent, TopSearchComponent],
   templateUrl: './browse.component.html',
   styleUrl: './browse.component.css'
 })

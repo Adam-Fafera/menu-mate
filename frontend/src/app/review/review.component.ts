@@ -4,12 +4,12 @@ import { IftaLabelModule } from 'primeng/iftalabel';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms'; 
 import { AvatarModule } from 'primeng/avatar';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-review',
   standalone: true,
-  imports: [InputTextModule, IftaLabelModule, FormsModule, RatingModule, AvatarModule, CommonModule],
+  imports: [InputTextModule, IftaLabelModule, FormsModule, RatingModule, AvatarModule],
   templateUrl: './review.component.html',
   styleUrl: './review.component.css'
 })

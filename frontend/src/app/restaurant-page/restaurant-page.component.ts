@@ -6,7 +6,7 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TableModule } from 'primeng/table'
-import { CommonModule } from '@angular/common';
+
 import { AccordionModule } from 'primeng/accordion';
 import { DialogModule } from 'primeng/dialog';
 import { FloatLabel } from 'primeng/floatlabel';
@@ -19,10 +19,7 @@ import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-restaurant-page',
-  imports: [TopSearchComponent, ButtonModule, IconFieldModule,
-    RatingModule, FormsModule, TableModule,
-    CommonModule, AccordionModule, DialogModule, TextareaModule,
-    FloatLabel, MenuItemCardComponent, Toast],
+  imports: [TopSearchComponent, ButtonModule, IconFieldModule, RatingModule, FormsModule, TableModule, AccordionModule, DialogModule, TextareaModule, FloatLabel, MenuItemCardComponent, Toast],
   templateUrl: './restaurant-page.component.html',
   styleUrl: './restaurant-page.component.css',
   providers: [MessageService]
