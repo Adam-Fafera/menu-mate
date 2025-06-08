@@ -13,6 +13,7 @@ import { RestaurantDashboardItemEditsComponent } from './restaurant-dashboard-it
 import { RestaurantDashboardItemEditsCheckComponent } from './restaurant-dashboard-item-edits-check/restaurant-dashboard-item-edits-check.component';
 import { RestaurantDashboardItemReviewsCheckComponent } from './restaurant-dashboard-item-reviews-check/restaurant-dashboard-item-reviews-check.component';
 import { RestaurantDashboardAddItemComponent } from './restaurant-dashboard-add-item/restaurant-dashboard-add-item.component';
+import { RestaurantDashboardSettingsComponent } from './restaurant-dashboard-settings/restaurant-dashboard-settings.component';
 
 export const routes: Routes = [
     // user paths
@@ -32,8 +33,9 @@ export const routes: Routes = [
     {path: 'dashboard/:id/item-reviews', component: RestaurantDashboardItemReviewsComponent},
     {path: 'dashboard/:id/item-reviews/:id', component: RestaurantDashboardItemReviewsCheckComponent},
     {path: 'dashboard/:id/add-item', component: RestaurantDashboardAddItemComponent},
+    {path: 'dashboard/:id/settings', component: RestaurantDashboardSettingsComponent},
 
     
-    {path: '**', component: PageNotFoundComponent},
+    {path: '**', component: PageNotFoundComponent}
     
 ];
