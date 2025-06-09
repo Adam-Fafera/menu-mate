@@ -1,10 +1,10 @@
 <div class="flex flex-row">
     <app-side-menu/>
-    <div class="basis-4/5 bg-zinc-900 p-6 mt-6 mb-3 mr-6 rounded-lg border border-zinc-700">
+    <div class="basis-4/5 bg-zinc-900 p-6 mt-6 mr-6 rounded-lg border border-zinc-700">
 
         <span class="font-semibold text-4xl text-zinc-600 ml-3">Self manage restaurant</span>
-        <div class="flex justify-center">
-            <div class="grid grid-cols-1 w-1/2 gap-7">
+        <div class="flex justify-center mt-5">
+            <div class="grid grid-cols-1 w-1/2 gap-3">
                 <p-iftalabel>
                     <input id="name" pInputText [(ngModel)]="name" class="w-full" />
                     <label for="name">Restaurant name</label>
@@ -22,7 +22,7 @@
                     <label for="cuisine">Cuisine</label>
                 </p-iftalabel>
                 <p-iftalabel>
-                    <p-inputmask  mask="+99-999-999-999" [(ngModel)]="phone" placeholder="+99-999-999-999"/>
+                    <p-inputmask  mask="+99-999 999 999" [(ngModel)]="phone" placeholder="+99-999 999 999"/>
                     <label for="phone">Phone</label>
                 </p-iftalabel>
                 <p-toast/>

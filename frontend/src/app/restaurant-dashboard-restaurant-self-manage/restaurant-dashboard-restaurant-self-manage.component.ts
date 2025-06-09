@@ -49,7 +49,7 @@ export class RestaurantDashboardRestaurantSelfManageComponent {
                 label: 'Save',
             },
             accept: () => {
-                this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted' });
+                this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'You have updated the restaurants info' });
             }
         });
     }

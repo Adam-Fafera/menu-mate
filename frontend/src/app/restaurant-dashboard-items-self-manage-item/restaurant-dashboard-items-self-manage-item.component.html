@@ -1,7 +1,20 @@
 <div class="flex flex-row">
     <app-side-menu/>
     <div class="basis-4/5 bg-zinc-900 p-6 mt-6 mb-3 mr-6 rounded-lg border border-zinc-700">
-        <span class="font-semibold text-4xl text-zinc-600 ml-3">Self manage an item</span>
-
+        <span class="font-semibold text-4xl text-zinc-600 ml-3">Self manage an item: {{item[0].name}}</span>
+        <div class="flex justify-center mt-5">
+            <div class="grid grid-cols-1 w-1/2 gap-3 ">
+                
+                <p-iftalabel>
+                    <input id="name" pInputText [(ngModel)]="item[0].name" class="w-full" />
+                    <label for="name">Item name</label>
+                </p-iftalabel>
+                <p-iftalabel>   
+                    <textarea pTextarea id="description" [(ngModel)]="item[0].description" class="w-full" rows="5" cols="30" style="resize: none"></textarea>
+                    <label for="description">Description</label>
+                </p-iftalabel>
+                <!-- <p-fileupload mode="basic" name="demo[]" chooseIcon="pi pi-upload" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="Browse" /> -->
+            </div>
+        </div>
     </div>
 </div> 
