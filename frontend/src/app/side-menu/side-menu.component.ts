@@ -47,9 +47,10 @@ export class SideMenuComponent implements OnInit{
         ]
       },
       {
-        label: 'Settings',
+        label: 'Self manage',
         items: [
-          {label: 'Restaurant info', icon:'pi pi-cog', command: () => {this.navigateSettings()}}
+          {label: 'Restaurant info', icon:'pi pi-pencil', command: () => {this.navigateRestaurantSelfManage()}},
+          {label: 'Items info', icon:'pi pi-file-edit', command:() => {this.navigateItemsSelfManage()}}
         ]
       }
     ];
@@ -89,14 +90,16 @@ export class SideMenuComponent implements OnInit{
     this.router.navigate(['dashboard/1/add-item']);
   }
 
-  navigateSettings(){
-    this.router.navigate(['dashboard/1/settings'])
+  navigateRestaurantSelfManage(){
+    this.router.navigate(['dashboard/1/restaurant-self-manage'])
   }  
+
+  navigateItemsSelfManage(){
+    this.router.navigate(['dashboard/1/items-self-manage'])
+  }
 
   signOut() {
   this.router.navigate(['login']);
   }
-
-  
 
 }

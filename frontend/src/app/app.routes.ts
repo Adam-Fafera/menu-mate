@@ -13,7 +13,9 @@ import { RestaurantDashboardItemEditsComponent } from './restaurant-dashboard-it
 import { RestaurantDashboardItemEditsCheckComponent } from './restaurant-dashboard-item-edits-check/restaurant-dashboard-item-edits-check.component';
 import { RestaurantDashboardItemReviewsCheckComponent } from './restaurant-dashboard-item-reviews-check/restaurant-dashboard-item-reviews-check.component';
 import { RestaurantDashboardAddItemComponent } from './restaurant-dashboard-add-item/restaurant-dashboard-add-item.component';
-import { RestaurantDashboardSettingsComponent } from './restaurant-dashboard-settings/restaurant-dashboard-settings.component';
+import { RestaurantDashboardItemsSelfManageComponent } from './restaurant-dashboard-items-self-manage/restaurant-dashboard-items-self-manage.component';
+import { RestaurantDashboardItemsSelfManageItemComponent } from './restaurant-dashboard-items-self-manage-item/restaurant-dashboard-items-self-manage-item.component';
+import { RestaurantDashboardRestaurantSelfManageComponent } from './restaurant-dashboard-restaurant-self-manage/restaurant-dashboard-restaurant-self-manage.component';
 
 export const routes: Routes = [
     // user paths
@@ -24,17 +26,21 @@ export const routes: Routes = [
     {path: 'user', component: UserPageComponent},
     {path: 'login', component: LoginComponent},
     
-    // dashboard paths
+    // DASHBOARD
+    // restaurant
     {path: 'dashboard/:id', component: RestaurantDashboardComponent},
     {path: 'dashboard/:id/edits', component: RestaurantDashboardEditsComponent},
     {path: 'dashboard/:id/reviews', component: RestaurantDashboardReviewsComponent},
+    // items
     {path: 'dashboard/:id/item-edits', component: RestaurantDashboardItemEditsComponent},
     {path: 'dashboard/:id/item-edits/:id', component: RestaurantDashboardItemEditsCheckComponent},
     {path: 'dashboard/:id/item-reviews', component: RestaurantDashboardItemReviewsComponent},
     {path: 'dashboard/:id/item-reviews/:id', component: RestaurantDashboardItemReviewsCheckComponent},
     {path: 'dashboard/:id/add-item', component: RestaurantDashboardAddItemComponent},
-    {path: 'dashboard/:id/settings', component: RestaurantDashboardSettingsComponent},
-
+    // self manage
+    {path: 'dashboard/:id/restaurant-self-manage', component: RestaurantDashboardRestaurantSelfManageComponent},
+    {path: 'dashboard/:id/items-self-manage', component: RestaurantDashboardItemsSelfManageComponent},
+    {path: 'dashboard/:id/items-self-manage/:id', component: RestaurantDashboardItemsSelfManageItemComponent },
     
     {path: '**', component: PageNotFoundComponent}
     
