@@ -18,7 +18,7 @@
                     <label for="location">Location</label>
                 </p-iftalabel>
                 <p-iftalabel>
-                    <input id="cuisine" pInputText [(ngModel)]="cuisine" class="w-full"/>
+                    <p-multi-select [options]="cuisines" [(ngModel)]="selectedCuisine" placeholder="Select Cuisine" class="w-full"/>
                     <label for="cuisine">Cuisine</label>
                 </p-iftalabel>
                 <p-iftalabel>
