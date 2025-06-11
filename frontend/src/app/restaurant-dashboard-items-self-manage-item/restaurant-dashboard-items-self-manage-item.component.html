@@ -9,12 +9,42 @@
                     <input id="name" pInputText [(ngModel)]="item[0].name" class="w-full" />
                     <label for="name">Item name</label>
                 </p-iftalabel>
+                <p-ifta-label>
+                    <p-inputnumber id="price" [(ngModel)]="price" inputId="currency-pl" mode="currency" currency="PLN" locale="pl-PL" class="w-full" />
+                    <label for="price"> Price </label>
+                </p-ifta-label>
                 <p-iftalabel>   
                     <textarea pTextarea id="description" [(ngModel)]="item[0].description" class="w-full" rows="5" cols="30" style="resize: none"></textarea>
                     <label for="description">Description</label>
                 </p-iftalabel>
-                <!-- <p-fileupload mode="basic" name="demo[]" chooseIcon="pi pi-upload" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="Browse" /> -->
+                <p-multiselect [options]="alergens" [(ngModel)]="selectedAlergens" optionLabel="name" placeholder="Select Alergens" class="w-full"/>
+                <p-ifta-label>
+
+                </p-ifta-label>
+                <div class="grid grid-cols-2 gap-2">
+                    <p-ifta-label>
+                        <p-inputnumber id="cals" [(ngModel)]="cals" inputId="cals" suffix=" g" class="w-full" />
+                        <label for="price"> Calories </label>
+                    </p-ifta-label>
+                    <p-ifta-label>
+                        <p-inputnumber id="carbs" [(ngModel)]="carbs" inputId="carbs" suffix=" g" class="w-full" />
+                        <label for="carbs"> Carbohydrates </label>
+                    </p-ifta-label>
+                    <p-ifta-label>
+                        <p-inputnumber id="fats" [(ngModel)]="fats" inputId="fats" suffix=" g" class="w-full" />
+                        <label for="fats"> Fats </label>
+                    </p-ifta-label>
+                    <p-ifta-label>
+                        <p-inputnumber id="proteins" [(ngModel)]="proteins" inputId="currency-pl" suffix=" g" class="w-full" />
+                        <label for="proteins"> Proteins </label>
+                    </p-ifta-label>
+                </div>
+                <div class="mt-3">
+                    <p-button ><i class="pi pi-pencil"></i> Update item </p-button>
+                    <p-button severity="secondary" class="ml-3 mt-3"><i class="pi pi-times"></i> Cancel update </p-button>
+                </div>
+                <!-- <p-fileupload mode="basic" name="demo[]" chooseIcon="pi pi-upload" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onUpload($event)" [auto]="true" chooseLabel="Browse" />                -->
             </div>
         </div>
     </div>
-</div> 
+</div>
