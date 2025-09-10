@@ -66,7 +66,7 @@ export class RestaurantPageComponent implements OnInit{
 
       this.items = [
         {
-          id: 1,
+          id: 'adam',
           name: 'Sandwich',
           price: 21.99,
           rating: 3,
@@ -77,7 +77,7 @@ export class RestaurantPageComponent implements OnInit{
           description: 'A really tasty teriyaki chicken sandwich',
         },
         {
-          id: 2,
+          id: '2',
           name: 'Salad',
           price: 15.50,
           rating: 4,
@@ -114,7 +114,7 @@ export class RestaurantPageComponent implements OnInit{
 
       this.restaurants = [
         {
-          id: 1,
+          id: 'gead',
           name: "Smuggler's Inn",
           rating: 4.4,
           reviewCount: 20,

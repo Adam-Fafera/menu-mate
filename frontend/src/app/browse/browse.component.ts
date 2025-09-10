@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { RestaurantCardComponent } from '../restaurant-card/restaurant-card.component';
 import { TopSearchComponent } from "../top-search/top-search.component";
 
-
-
 @Component({
   selector: 'app-browse',
   standalone: true,
@@ -16,7 +14,7 @@ export class BrowseComponent {
 
   restaurants = [
         {
-          id: 1,
+          id: 'adam',
           name: "Smuggler's Inn",
           rating: 4.4,
           reviewCount: 20,
