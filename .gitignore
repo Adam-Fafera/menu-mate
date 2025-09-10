@@ -1,1 +1,8 @@
-frontend/.angular/cache/19.2.12/frontend/.tsbuildinfo
+/frontend/.angular/cache/19.2.12/frontend/.tsbuildinfo
+/frontend/node_modules/
+/frontend/.angular/cache
+/backend/bin/
+/backend/obj/
+/backend/packages/
+/backend/riderModule.iml
+/backend/_ReSharper.Caches/

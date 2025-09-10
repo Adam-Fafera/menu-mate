@@ -4,13 +4,13 @@ import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
 import { AvatarModule } from 'primeng/avatar';
 import { TabsModule } from 'primeng/tabs';
-import { CommonModule } from '@angular/common';
+
 import { PrimeIcons } from 'primeng/api';
 
 @Component({
   selector: 'app-user-page',
   standalone: true,
-  imports: [TopSearchComponent, ButtonModule, AvatarModule, TabsModule, RouterLink, CommonModule],
+  imports: [TopSearchComponent, ButtonModule, AvatarModule, TabsModule, RouterLink],
   templateUrl: './user-page.component.html',
   styleUrl: './user-page.component.css'
 })

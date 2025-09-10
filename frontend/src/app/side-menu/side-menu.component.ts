@@ -14,27 +14,93 @@ export class SideMenuComponent implements OnInit{
 
   items : MenuItem[] | undefined;
   options : MenuItem[] | undefined;
+  constructor(private router: Router) {}
 
-  constructor(private router : Router ) {}
 
   ngOnInit(){
     this.items = [
-      {label: 'Home', icon:'pi pi-home'},
-      {label: 'Edits', icon:'pi pi-file-edit'},
-      {label:'Reviews', icon:'pi pi-star', badge:'3'},
-      {label: 'Item edits', icon:'pi pi-file-edit'},
-      {label:'Item reviews', icon:'pi pi-star', badge:'2'},
+      
+      {
+        separator:true
+        
+      },
+    
+      {
+        label: 'Restaurant',
+        items: [
+          {label: 'Home', icon:'pi pi-home', command : () => {this.navigateHome()}},
+          {label: 'Edits', icon:'pi pi-file-edit', command : () => {this.navigateEdits()} },
+          {label:'Reviews', icon:'pi pi-star', badge:'3', command : () => {this.navigateReviews()}},
+           
+        ]
+      },
+      {
+        label: 'Menu',
+        items: [
+          {label: 'Item edits', icon:'pi pi-file-edit', command : () => {this.navigateItemEdits()}},
+          {label:'Item reviews', icon:'pi pi-star', badge:'2', command : () => {this.navigateItemReviews()}}, 
+        ]
+      },
+      {
+        label: 'Create',
+        items: [
+          {label: 'Add item', icon: 'pi pi-plus', command: () => {this.navigateAddItem()}}
+        ]
+      },
+      {
+        label: 'Self manage',
+        items: [
+          {label: 'Restaurant info', icon:'pi pi-pencil', command: () => {this.navigateRestaurantSelfManage()}},
+          {label: 'Items info', icon:'pi pi-file-edit', command:() => {this.navigateItemsSelfManage()}}
+        ]
+      }
     ];
 
     this.options = [
-      {label:'Sign out', icon:'pi pi-sign-out', command: () => {this.signOut()} },
+      {label:'Sign out', icon:'pi pi-sign-out', command : () => {
+        this.signOut();
+      }
+     },
 
     ];
+
+    
+  }
+
+  navigateHome(){
+    this.router.navigate(['dashboard/1']);
+  }
+  
+  navigateEdits(){
+    this.router.navigate(['dashboard/1/edits']);
+  }
+  
+  navigateReviews(){
+    this.router.navigate(['dashboard/1/reviews']);
+  }
+  
+  navigateItemEdits(){
+    this.router.navigate(['dashboard/1/item-edits']);
+  }
+  
+  navigateItemReviews(){
+    this.router.navigate(['dashboard/1/item-reviews']);
+  }
+
+  navigateAddItem(){
+    this.router.navigate(['dashboard/1/add-item']);
+  }
+
+  navigateRestaurantSelfManage(){
+    this.router.navigate(['dashboard/1/restaurant-self-manage'])
+  }  
+
+  navigateItemsSelfManage(){
+    this.router.navigate(['dashboard/1/items-self-manage'])
   }
 
   signOut() {
-    this.router.navigate(['/login']);
+  this.router.navigate(['login']);
   }
-
 
 }

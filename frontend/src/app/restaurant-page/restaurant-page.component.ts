@@ -6,7 +6,7 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TableModule } from 'primeng/table'
-import { CommonModule } from '@angular/common';
+
 import { AccordionModule } from 'primeng/accordion';
 import { DialogModule } from 'primeng/dialog';
 import { FloatLabel } from 'primeng/floatlabel';
@@ -19,10 +19,7 @@ import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-restaurant-page',
-  imports: [TopSearchComponent, ButtonModule, IconFieldModule,
-    RatingModule, FormsModule, TableModule,
-    CommonModule, AccordionModule, DialogModule, TextareaModule,
-    FloatLabel, MenuItemCardComponent, Toast],
+  imports: [TopSearchComponent, ButtonModule, IconFieldModule, RatingModule, FormsModule, TableModule, AccordionModule, DialogModule, TextareaModule, FloatLabel, MenuItemCardComponent, Toast],
   templateUrl: './restaurant-page.component.html',
   styleUrl: './restaurant-page.component.css',
   providers: [MessageService]
@@ -69,7 +66,7 @@ export class RestaurantPageComponent implements OnInit{
 
       this.items = [
         {
-          id: 1,
+          id: 'adam',
           name: 'Sandwich',
           price: 21.99,
           rating: 3,
@@ -80,7 +77,7 @@ export class RestaurantPageComponent implements OnInit{
           description: 'A really tasty teriyaki chicken sandwich',
         },
         {
-          id: 2,
+          id: '2',
           name: 'Salad',
           price: 15.50,
           rating: 4,
@@ -117,7 +114,7 @@ export class RestaurantPageComponent implements OnInit{
 
       this.restaurants = [
         {
-          id: 1,
+          id: 'gead',
           name: "Smuggler's Inn",
           rating: 4.4,
           reviewCount: 20,

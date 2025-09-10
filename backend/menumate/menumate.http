@@ -1,0 +1,6 @@
+@menumate_HostAddress = http://localhost:5042
+
+GET {{menumate_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
