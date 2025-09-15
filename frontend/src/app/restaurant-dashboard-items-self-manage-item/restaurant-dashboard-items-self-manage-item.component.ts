@@ -23,7 +23,7 @@ interface Alergens {
 
 @Component({
   selector: 'app-restaurant-dashboard-items-self-manage-item',
-  imports: [SideMenuComponent, IftaLabelModule, TextareaModule, CommonModule, FormsModule, InputTextModule, FileUpload, ToastModule, ButtonModule, InputNumberModule, MultiSelectModule],
+  imports: [SideMenuComponent, IftaLabelModule, TextareaModule, CommonModule, FormsModule, InputTextModule, /*FileUpload,*/ ToastModule, ButtonModule, InputNumberModule, MultiSelectModule],
   templateUrl: './restaurant-dashboard-items-self-manage-item.component.html',
   styleUrl: './restaurant-dashboard-items-self-manage-item.component.css',
   providers: [MessageService]

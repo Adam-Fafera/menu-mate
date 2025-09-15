@@ -1,0 +1,17 @@
+@if (reviews.length > 0) {
+  @for (review of reviews; track review) {
+    <div class="rounded-xl p-3 mt-3 border border-zinc-700">
+      <div class="flex items-end gap-2 mb-3">
+        <p-avatar shape="circle" [image]="review.userImagePath" />
+        <span class="font-medium">{{review.userName}}</span>
+      </div>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="text-sm text-zinc-50 font-semibold">{{review.title}}</span>
+        <p-rating [(ngModel)]="review.rating" [readonly]="true"></p-rating>
+      </div>
+      <p class="text-sm text-zinc-200">{{review.description}}</p>
+    </div>
+  }
+} @else {
+  <p>No reviews yet for this item</p>
+}

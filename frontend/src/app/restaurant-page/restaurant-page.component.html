@@ -3,7 +3,7 @@
 </div>
 <div class="static mx-auto place-content-center w-3/4 surface-card p-4 shadow-2 border-round">
   <div class="relative h-1/12">
-    <img alt="Card" class="rounded-md h-36 w-full object-cover" src={{selectedRestaurant.img}} />
+    <img alt="Card" class="rounded-md h-36 w-full object-cover" [src]="selectedRestaurant.imagePath"/>
   </div>
 
   <div class="text-4xl font-medium mt-3 text-900 mb-3"> {{selectedRestaurant.name}} </div>
@@ -11,7 +11,7 @@
 
   <div class="grid grid-cols-4 grid-rows-2 content-center">
 
-    <!-- what a monstrosity xd  -->
+    <!-- what a monstrosity xd HOURS -->
     <div class="col-span-1 col-start-1 absolute" >
       <p-accordion value="0" >
         <p-accordion-panel value="1" >
@@ -25,8 +25,7 @@
             </ng-template>
           </p-accordion-header>
           <p-accordion-content>
-
-            @if (selectedRestaurant) {
+            <!-- @if (selectedRestaurant) {
               <div>
                 <p-table [value]="getHoursArray()" [tableStyle]="{ 'max-width': '15rem' }">
                   <ng-template #header>
@@ -43,7 +42,7 @@
                   </ng-template>
                 </p-table>
               </div>
-            }
+            } -->
 
           </p-accordion-content>
         </p-accordion-panel>
@@ -52,9 +51,9 @@
 
     <div class="col-span-1 col-start-4 content-center cursor-pointer hover:underline" (click)="showAllReviews()" >
       <div class="grid grid-rows- grid-cols-1 content-center place-items-end">
-        <p-rating [(ngModel)]="value" [readonly]="true"/>
-        <h1 class="mt-1" >{{selectedRestaurant.rating}} / 5</h1>
-        <div class="text-stone-400">{{selectedRestaurant.reviewCount}} reviews</div>
+        <p-rating [(ngModel)]="restaurantRating" [readonly]="true"/>
+        <h1 class="mt-1" > {{calculateAverageRating()}} / 5</h1>
+        <div class="text-stone-400">{{reviews.length}} reviews</div>
       </div>
     </div>
 
@@ -98,21 +97,16 @@
     <!-- Turn this review part into component as well-->
 
     <p-dialog header="All Reviews" [modal]="true" [(visible)]="visibleAllReviews" [style]="{ width: '40rem' }">
-      <span class="p-text-secondary block mb-8">All of {{selectedRestaurant.name}}'s {{selectedRestaurant.reviewCount}} reviews</span>
-      <div class="flex items-center gap-4 mb-4">
-        <p class="font-bold w-24"> Całkiem ok</p>
-        <p-rating [(ngModel)]="value" class="flex-auto" [readonly]="true"></p-rating>
-      </div>
-      <div class="flex items-center gap-5 mb-8">
-        <p>Naprawde spoko restauracja, ok cena, super obsluga, nic tylko wracac</p>
+      <span class="p-text-secondary block mb-8">All of {{selectedRestaurant.name}}'s reviews</span>    
+      <div>
+        <app-review></app-review>
       </div>
     </p-dialog>
-
+    
   </div>
-  <div class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 w-screenitems-center justify-center rounded-3xl bg-zinc-950">
-    @for (item of items; track item) {
+
+  <div class="grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 items-center rounded-3xl bg-zinc-950">
       <app-menu-item-card class="m-3"></app-menu-item-card>
-    }
   </div>
 
 </div>

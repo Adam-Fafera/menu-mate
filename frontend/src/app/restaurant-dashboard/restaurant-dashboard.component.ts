@@ -6,7 +6,10 @@ import { SidebarModule } from 'primeng/sidebar';
 import { SideMenuComponent } from "../side-menu/side-menu.component";
 import { BadgeModule } from 'primeng/badge';
 import { CardModule } from 'primeng/card';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RestaurantService } from '../services/restaurant.service';
+import { RatingServiceService } from '../services/rating-service.service';
+import { RecursiveVisitor } from '@angular/compiler';
 
 
 
@@ -18,9 +21,46 @@ import { RouterLink } from '@angular/router';
   styleUrl: './restaurant-dashboard.component.css'
 })
 export class RestaurantDashboardComponent{
+  urlId : string | null = null;
+  restaurant: any = null;
+  rating: number = 0;
+  reviewCount: number = 0;
 
-  goToItem(){
-    console.log("go to item")
+  constructor(private restaurantSerivce: RestaurantService, private ratingService: RatingServiceService, private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.urlId = this.route.snapshot.paramMap.get('id');
+    if (this.urlId) {
+      this.restaurantSerivce.getRestaurantById(this.urlId).subscribe({
+      next: restaurant => {
+        this.restaurant = restaurant;
+      },
+      error: err => {
+        console.error('Failed to fetch restaurant: ', err);
+        this.restaurant = null;
+      }
+      });
+
+      this.ratingService.getRestaurantRating(this.urlId).subscribe({
+        next: rating => {
+          this.rating = rating
+        },
+        error: err => {
+          console.error('Failed to fetch rating: ', err)
+          this.rating = 0;
+        }
+      })
+
+      this.ratingService.countRestaurantReviews(this.urlId).subscribe({
+        next: reviewCount => {
+          this.reviewCount = reviewCount;
+        },
+        error: err => {
+          console.error('Failed to fetch count of reivews: ', err)
+          this.reviewCount = 0;
+        }
+      })
+
+    }
   }
-
 }

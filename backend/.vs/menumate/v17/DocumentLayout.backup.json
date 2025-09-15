@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\controllers\\reviewitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\controllers\\reviewitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\models\\addeditrestaurantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\models\\addeditrestaurantdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\models\\addreviewitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\models\\addreviewitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\controllers\\editrestaurantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\controllers\\editrestaurantscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\models\\entities\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\models\\entities\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\models\\entities\\reviewitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\models\\entities\\reviewitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReviewItem.cs",
+              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\Entities\\ReviewItem.cs",
+              "RelativeDocumentMoniker": "menumate\\Models\\Entities\\ReviewItem.cs",
+              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\Entities\\ReviewItem.cs",
+              "RelativeToolTip": "menumate\\Models\\Entities\\ReviewItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T18:07:08.671Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -35,52 +44,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Program.cs",
-              "RelativeDocumentMoniker": "menumate\\Program.cs",
-              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Program.cs",
-              "RelativeToolTip": "menumate\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAAAaAAAAAAAAAA==",
+              "Title": "ReviewItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\ReviewItemsController.cs",
+              "RelativeDocumentMoniker": "menumate\\Controllers\\ReviewItemsController.cs",
+              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\ReviewItemsController.cs",
+              "RelativeToolTip": "menumate\\Controllers\\ReviewItemsController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAADgvyQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T01:19:49.635Z",
+              "WhenOpened": "2025-09-14T17:51:30.886Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AddEditRestaurantDto.cs",
-              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\AddEditRestaurantDto.cs",
-              "RelativeDocumentMoniker": "menumate\\Models\\AddEditRestaurantDto.cs",
-              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\AddEditRestaurantDto.cs",
-              "RelativeToolTip": "menumate\\Models\\AddEditRestaurantDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABAAAAAAAAAAA==",
+              "Title": "AddReviewItemDto.cs",
+              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\AddReviewItemDto.cs",
+              "RelativeDocumentMoniker": "menumate\\Models\\AddReviewItemDto.cs",
+              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\AddReviewItemDto.cs",
+              "RelativeToolTip": "menumate\\Models\\AddReviewItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T22:30:50.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditRestaurantsController.cs",
-              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\EditRestaurantsController.cs",
-              "RelativeDocumentMoniker": "menumate\\Controllers\\EditRestaurantsController.cs",
-              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\EditRestaurantsController.cs",
-              "RelativeToolTip": "menumate\\Controllers\\EditRestaurantsController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAwCcAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T22:27:14.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MenuItem.cs",
-              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\Entities\\MenuItem.cs",
-              "RelativeDocumentMoniker": "menumate\\Models\\Entities\\MenuItem.cs",
-              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\Entities\\MenuItem.cs",
-              "RelativeToolTip": "menumate\\Models\\Entities\\MenuItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T19:39:14.911Z"
+              "WhenOpened": "2025-09-14T18:07:01.516Z"
             }
           ]
         }

@@ -1,3 +1,4 @@
+@if (restaurant) {
 <div class="flex flex-row">
     <app-side-menu/>
     <div class="basis-4/5 bg-zinc-900 p-6 mt-6 mb-3 mr-6 rounded-lg border border-zinc-700">
@@ -5,45 +6,42 @@
         <div class="flex justify-center gap-3 mt-3 mb-5">
             <div>
                 <img class="rounded-xl" src="https://media-cdn.tripadvisor.com/media/photo-s/18/e1/5c/23/caption.jpg " />
-                <span class="text-5xl"> <strong>Smuggler's Inn</strong></span>
+                <span class="text-5xl"> <strong> {{restaurant.name}}</strong></span>
             </div>
             <!-- Restaurant reviews -->
             <div class="grid grid-cols-2 gap-2">
                 <div routerLink="./edits" class="grid-cols-3 gap-3 cursor-pointer rounded-lg border border-zinc-700 hover:shadow-white-xl p-2">
-                    <span class="font-bold text-xl"> Edits waiting for restaurant </span>
-                        
-                    <p-badge value="3"/>
+                    <span class="font-bold text-xl"> Pending restaurant edits </span>
+                       
                 </div>
                 <div routerLink="./item-edits" class="grid-cols-3 gap-3 cursor-pointer rounded-lg border border-zinc-700 hover:shadow-white-xl p-2">
-                    <span class="font-bold text-xl"> Edits waiting for menu items </span>
-                        
-                    <p-badge value="3"/>
+                    <span class="font-bold text-xl"> Pending menu items edits </span>
                 </div>
                 <div routerLink="./reviews" class="grid-cols-3 gap-3 cursor-pointer rounded-lg border border-zinc-700 hover:shadow-white-xl p-2">
                     <span class="font-bold text-xl"> Rating - reviews of restaurant </span>
                         
-                    <p-badge value="3"/>
+                    <p-badge value="{{reviewCount}}"/>
                 </div>
                 <div routerLink="./item-reviews" class="grid-cols-3 gap-3 cursor-pointer rounded-lg border border-zinc-700 hover:shadow-white-xl p-2">
                     <span class="font-bold text-xl"> Rating - reviews of menu items (avg) </span>
                         
-                    <p-badge value="3"/>
                 </div>
             </div>
         </div>
         <span class="grid font-semibold text-2xl text-zinc-600 mt-7 ml-3"></span>
-        <div class="grid grid-cols-2 gap-2 mt-3">
-            <div class="grid grid-cols-1 justify-items-center gap-3 rounded-lg border border-zinc-700 p-2">
+        <div class="grid grid-cols-1 gap-2 mt-3">
+            <div routerLink="./reviews" class="grid grid-cols-1 justify-items-center gap-3 rounded-lg border border-zinc-700 p-2 hover:shadow-white-xl cursor-pointer">
                 <div><span class="text-zinc-300 font-semibold">Restaurant rating</span></div>
-                <div><span class="text-4xl font-bold">4.2<i class="pi pi-star-fill" style="font-size: x-large;"></i></span></div>
-                <span>33 reviews</span>
+                <div><span class="text-4xl font-bold">{{rating}}<i class="pi pi-star-fill" style="font-size: x-large;"></i></span></div>
+                <span>{{reviewCount}} reviews</span>
                 
             </div>
-            <div class="grid grid-cols-1 justify-items-center gap-3 rounded-lg border border-zinc-700 p-2">
+            <!-- <div class="grid grid-cols-1 justify-items-center gap-3 rounded-lg border border-zinc-700 p-2">
                 <div><span class="text-zinc-300 font-semibold">Menu items rating</span></div>
                 <div class="flex items-center"><span class="text-4xl font-bold">4.3</span><i class="pi pi-star-fill" style="font-size: x-large;"></i></div>
                 <span>20 reviews</span>
-            </div>
+            </div> -->
         </div>
     </div>
 </div> 
+}

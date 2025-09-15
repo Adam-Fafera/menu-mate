@@ -4,6 +4,7 @@ import { IftaLabelModule } from 'primeng/iftalabel';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms'; 
 import { AvatarModule } from 'primeng/avatar';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,31 +15,46 @@ import { AvatarModule } from 'primeng/avatar';
   styleUrl: './review.component.css'
 })
 export class ReviewComponent {
+  reviews: any[] = [];
+  restaurantRating: number = 0;
+  urlID : string | null = null;
 
-  reviews = [
-    {
-    reviewID : 1,
-    restaurantID: 1,
-    itemID : 0,
-    userID : 2,
-    userName: 'despaciten',
-    userImg: 'https://cdnb.artstation.com/p/assets/images/images/084/668/351/large/rexygramer-hkdave.jpg?1738900862',
-    reviewTitle: 'Całkiem ok',
-    reviewRating: 4,
-    description: 'Naprawde spoko restauracja, ok cena, super obsluga, nic tylko wracac :)',
-    },
-    {
-      reviewID : 2,
-      restaurantID: 1,
-      itemID : 0,
-      userID : 3,
-      userName: 'Marcin',
-      userImg: 'https://images.squarespace-cdn.com/content/v1/6238e52add6d246d399e9fcb/262796e7-b217-40c6-80c9-2331b41c28f3/IMG_1853.jpg',
-      reviewTitle: 'TRAGEDIA',
-      reviewRating: 1,
-      description: 'Żadna pozycja w menu nie przystosowana dla kotów. ABSOLUTNIE NIC! Co ja mam zjeść?! ',
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.urlID = this.route.snapshot.paramMap.get('id');
+
+    fetch(`https://localhost:7084/api/Reviews/${this.urlID}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch items data');
+        }
+        return response.json();
+        })
+        .then(data => {
+        this.reviews = data;
+        this.calculateAverageRating();
+        console.log(this.reviews);
+        })
+        .catch(error => {
+        console.error('Error fetching items:', error);
+        });
+        
+  }
+
+  calculateAverageRating(): number {
+    if (this.reviews.length === 0) {
+      this.restaurantRating = 0;
+      return 0;
     }
-  ];
+    const total = this.reviews.reduce((sum, review) => sum + (review.rating || 0), 0);
+    this.restaurantRating = total / this.reviews.length;
+    return this.restaurantRating;
+  }
 
+  countReviews(): number{
+    return 0;
+  }
+  
 }
 

@@ -190,6 +190,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "menumate.Controllers.ItemsController",
+    "Method": "GetItemsByRestaurant",
+    "RelativePath": "api/Items/Restaurant/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "menumate.Controllers.RestaurantsController",
     "Method": "GetRestaurants",
     "RelativePath": "api/Restaurants",
@@ -269,6 +285,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "menumate.Controllers.ReviewItemsController",
+    "Method": "GetReviewItems",
+    "RelativePath": "api/ReviewItems",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "menumate.Controllers.ReviewItemsController",
+    "Method": "AddReviewItem",
+    "RelativePath": "api/ReviewItems",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addReviewItemDto",
+        "Type": "menumate.Models.AddReviewItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "menumate.Controllers.ReviewItemsController",
+    "Method": "GetReviewItemsByItemId",
+    "RelativePath": "api/ReviewItems/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "menumate.Controllers.ReviewItemsController",
+    "Method": "UpdateReviewItem",
+    "RelativePath": "api/ReviewItems/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateReviewItemDto",
+        "Type": "menumate.Models.UpdateReviewItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "menumate.Controllers.ReviewItemsController",
+    "Method": "DeleteReviewItem",
+    "RelativePath": "api/ReviewItems/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "menumate.Controllers.ReviewsController",
     "Method": "GetReviews",
     "RelativePath": "api/Reviews",
@@ -312,7 +407,7 @@
   },
   {
     "ContainingType": "menumate.Controllers.ReviewsController",
-    "Method": "GetReviewById",
+    "Method": "GetReviewByRestaurantId",
     "RelativePath": "api/Reviews/{id}",
     "HttpMethod": "GET",
     "IsController": true,

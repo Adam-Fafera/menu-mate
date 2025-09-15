@@ -13,7 +13,7 @@ namespace menumate.Controllers
     {
         private readonly ApplicationDbContext dbContext;
 
-        ReviewsController(ApplicationDbContext dbContext)
+        public ReviewsController(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
@@ -21,14 +21,14 @@ namespace menumate.Controllers
         [HttpGet]
         public IActionResult GetReviews()
         {
-            return Ok(dbContext.Users.ToList());
+            return Ok(dbContext.Reviews.ToList());
         }
 
         [HttpGet]
         [Route("{id:guid}")]
-        public IActionResult GetReviewById(Guid id)
+        public IActionResult GetReviewByRestaurantId(Guid id)
         {
-            var review = dbContext.Reviews.Find(id);
+            var review = dbContext.Reviews.Where(item => item.RestaurantId == id);
 
             if (review == null) 
             {
@@ -42,6 +42,7 @@ namespace menumate.Controllers
         {
             var reviewEntity = new Review()
             {
+                RestaurantId = addReviewDto.RestaurantId,
                 Description = addReviewDto.Description,
                 Rating = addReviewDto.Rating
             };

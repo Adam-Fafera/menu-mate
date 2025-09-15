@@ -1,15 +1,19 @@
-@for (review of reviews; track review) {
-  <div class="rounded-xl p-3 mt-3 border border-zinc-700">
-    <div class="flex items-end gap-2 mb-3">
-      <p-avatar shape="circle" image="{{review.userImg}}" />
-      <p class="text-zinc-400"> <strong> {{review.userName}} </strong></p>
+@if (reviews.length > 0) {
+  @for (review of reviews; track review) {
+    <div class="rounded-xl p-3 mt-3 border border-zinc-700">
+      <div class="flex items-end gap-2 mb-3">
+        <p-avatar shape="circle" image="{{review.userImagePath}}" />
+        <p class="text-zinc-400"> <strong> {{review.userName}} </strong></p>
+      </div>
+      <div class="flex items-center gap-2 mb-1">
+        <p class="font-bold w-24"> {{review.title}}</p>
+        <p-rating [(ngModel)]="review.rating" class="flex-auto" [readonly]="true"></p-rating>
+      </div>
+      <div class="flex items-center gap-5 mb-8">
+        <p>{{review.description}}</p>
+      </div>
     </div>
-    <div class="flex items-center gap-2 mb-1">
-      <p class="font-bold w-24"> {{review.reviewTitle}}</p>
-      <p-rating [(ngModel)]="review.reviewRating" class="flex-auto" [readonly]="true"></p-rating>
-    </div>
-    <div class="flex items-center gap-5 mb-8">
-      <p>{{review.description}}</p>
-    </div>
-  </div>
+  }
+} @else {
+  <p>No reviews yet</p>
 }

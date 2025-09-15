@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backend"
   ],
-  "SelectedNode": "\\menumate.sln",
+  "SelectedNode": "\\backend\\menumate.sln",
   "PreviewInSolutionExplorer": false
 }

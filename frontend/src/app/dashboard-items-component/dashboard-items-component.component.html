@@ -1,16 +1,16 @@
  <div class="grid grid-cols-2">
     @for (item of items; track item.id) {
-        <div (click)="goToItem()" class="m-3 hover:brightness-125 hover:shadow-white-lg rounded-xl cursor-pointer border border-zinc-700">
+        <div (click)="goToItem(item.id)" class="m-3 hover:brightness-125 hover:shadow-white-lg rounded-xl cursor-pointer border border-zinc-700">
             <p-card styleClass="h-full">
                 <div class="2xl:flex gap-0">
-                    <img src="{{item.img}}" class="h-32 w-32 object-cover rounded-lg basis-1/12">
+                    <img [src]="item.image" (error)="$event.target.src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png'" class="h-32 w-32 object-cover rounded-lg basis-1/12" alt="{{item.name}}">
                     <div class="grid grid-cols-2 gap-2 basis-8/12 p-3">
                         <span class="font-bold text-xl"> {{item.name}} </span>
                         <span class="text-zinc-400 col-span-1 col-start-2 row-start-1 row-span-2 h-24 text-pretty overflow-clip"> {{item.description}} </span>  
-                        <span class="text-zinc-400 row-start-2 font-semibold text-lg"> {{item.price}} {{item.currency}}</span>
+                        <span class="text-zinc-400 row-start-2 font-semibold text-lg"> {{item.price}} {{getCurrencySymbol(item.currency)}}</span>
                     </div>
                     <div class="basis-1/12">
-                        @if (item.reviews>0) {
+                        @if (item.reviews>0) { 
                         <p-badge value="{{item.reviews}}"/>
                         }
                     </div>

@@ -12,6 +12,8 @@ import { TopSearchComponent } from "../top-search/top-search.component";
 export class BrowseComponent {
   visible: boolean = false;
   restaurants: any[] = [];
+  reviews: any[] = [];
+  rating: number = 0;
 
   ngOnInit() {
     fetch('https://localhost:7084/api/Restaurants')
@@ -23,9 +25,7 @@ export class BrowseComponent {
       .catch(error => {
         console.error('Error fetching restaurants:', error);
       });
-  }
-  // Get data from api 
 
+  }
   
- 
 }

@@ -13,6 +13,7 @@ namespace menumate.Models
         public int Fats { get; set; }
         public int Carbs { get; set; }
         public int Proteins { get; set; }
+        public string Allergens { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
     }

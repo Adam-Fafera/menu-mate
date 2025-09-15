@@ -24,6 +24,7 @@ namespace menumate.Controllers
             return Ok(dbContext.Items.ToList());
         }
 
+
         [HttpGet]
         [Route("{id:guid}")]
         public IActionResult GetItemById(Guid id)
@@ -38,6 +39,15 @@ namespace menumate.Controllers
             return Ok(item);
         }
 
+        [HttpGet]
+        [Route("Restaurant/{id:guid}")]
+        public IActionResult GetItemsByRestaurant(Guid id)
+        {
+            var items = dbContext.Items.Where(item => item.RestaurantId == id).ToList();
+            return Ok(items);
+        }
+        
+
         [HttpPost]
         public IActionResult AddItem(AddItemDto addItemDto)
         {
@@ -51,6 +61,7 @@ namespace menumate.Controllers
                 Carbs = addItemDto.Carbs,
                 Fats = addItemDto.Fats,
                 Proteins = addItemDto.Proteins,
+                Allergens = addItemDto.Allergens,
                 Image = addItemDto.Image,
                 RestaurantId = addItemDto.RestaurantId
             }; 
@@ -74,7 +85,9 @@ namespace menumate.Controllers
             itemEntity.Calories = updateItemDto.Calories;
             itemEntity.Carbs = updateItemDto.Carbs;
             itemEntity.Fats = updateItemDto.Fats;
+            itemEntity.Allergens = updateItemDto.Allergens;
             itemEntity.Proteins = updateItemDto.Proteins;
+            
             itemEntity.Image = updateItemDto.Image;
 
             dbContext.SaveChanges();

@@ -13,6 +13,8 @@ namespace menumate.Data
 
         public DbSet<Review> Reviews { get; set; }
 
+        public DbSet<ReviewItem> ReviewItems { get; set; }
+
         public DbSet<EditItem> EditItems { get; set; }
 
         public DbSet<EditRestaurant> EditRestaurants { get; set; }

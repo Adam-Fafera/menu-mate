@@ -4,9 +4,8 @@ import { ButtonModule } from 'primeng/button';
 import { IconFieldModule } from 'primeng/iconfield';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { TableModule } from 'primeng/table'
-
 import { AccordionModule } from 'primeng/accordion';
 import { DialogModule } from 'primeng/dialog';
 import { FloatLabel } from 'primeng/floatlabel';
@@ -14,12 +13,11 @@ import { TextareaModule } from 'primeng/textarea';
 import { MenuItemCardComponent } from "../menu-item-card/menu-item-card.component";
 import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
-
-
+import { ReviewComponent } from "../review/review.component";
 
 @Component({
   selector: 'app-restaurant-page',
-  imports: [TopSearchComponent, ButtonModule, IconFieldModule, RatingModule, FormsModule, TableModule, AccordionModule, DialogModule, TextareaModule, FloatLabel, MenuItemCardComponent, Toast],
+  imports: [TopSearchComponent, ButtonModule, IconFieldModule, RatingModule, FormsModule, TableModule, AccordionModule, DialogModule, TextareaModule, FloatLabel, MenuItemCardComponent, Toast, ReviewComponent],
   templateUrl: './restaurant-page.component.html',
   styleUrl: './restaurant-page.component.css',
   providers: [MessageService]
@@ -27,8 +25,10 @@ import { MessageService } from 'primeng/api';
 export class RestaurantPageComponent implements OnInit{
   
   restaurants: any[] = [];
-  items: any[] = [];
   selectedRestaurant: any;
+  items: any[] = [];
+  reviews: any[] = [];
+  restaurantRating: number = 0;
   visibleReview: boolean = false;
   visibleAllReviews: boolean = false;
 
@@ -52,214 +52,65 @@ export class RestaurantPageComponent implements OnInit{
   }
   
 
-  constructor(private route: ActivatedRoute, private router: Router, private messageService: MessageService) {}
+  constructor(private route: ActivatedRoute, private messageService: MessageService) {}
 
   
   ngOnInit() {
     const urlID = this.route.snapshot.paramMap.get('id');
+
   
-    
     if(!urlID){
       console.error("Restaurant with this ID doesn't exist");
       return;
     }
 
-      this.items = [
-        {
-          id: 'adam',
-          name: 'Sandwich',
-          price: 21.99,
-          rating: 3,
-          alergens: 'nuts',
-          proteins: '2g',
-          carbohydrates: '3g',
-          fats: '1g',
-          description: 'A really tasty teriyaki chicken sandwich',
-        },
-        {
-          id: '2',
-          name: 'Salad',
-          price: 15.50,
-          rating: 4,
-          alergens: null,
-          proteins: '5g',
-          carbohydrates: '8g',
-          fats: '2g',
-          description: 'Fresh garden salad with a light vinaigrette',
-        },
-        {
-          id: 3,
-          name: 'Soup',
-          price: 12.00,
-          rating: 5,
-          alergens: 'dairy',
-          proteins: '3g',
-          carbohydrates: '10g',
-          fats: '4g',
-          description: 'Creamy tomato soup with basil',
-        },
-        {
-          id: 4,
-          name: 'Pasta',
-          price: 25.00,
-          rating: 4,
-          alergens: 'gluten',
-          proteins: '7g',
-          carbohydrates: '30g',
-          fats: '6g',
-          description: 'Spaghetti with a rich bolognese sauce',
-        },
-      ];
-
-
-      this.restaurants = [
-        {
-          id: 'gead',
-          name: "Smuggler's Inn",
-          rating: 4.4,
-          reviewCount: 20,
-          location: "Gdańsk, ul. Długa 12",
-          phone: "512 566 209",
-          img:
-            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/e1/5c/3c/caption.jpg",
-          description:
-            "A cozy spot in the heart of Gdańsk, Smuggler's Inn offers traditional Polish cuisine with a modern twist. Try our pierogi with wild mushrooms!",
-          hours: {
-            Monday: "6:00 - 19:00",
-            Tuesday: "6:00 - 19:00",
-            Wednesday: "6:00 - 19:00",
-            Thursday: "6:00 - 19:00",
-            Friday: "6:00 - 21:00",
-            Saturday: "8:00 - 21:00",
-            Sunday: "Closed",
-          },
-        },
-        {
-          id: 2,
-          name: "Mogger's Outt",
-          rating: 1.2,
-          reviewCount: 21,
-          location: "Kraków, Rynek Główny 1",
-          phone: "601 234 567",
-          img: "https://purohotel.pl/media/22nfhnuw/ph_gdansk_magari001.jpg?width=562&height=351&format=webp&v=1d8f3722d28cea0",
-          description:
-            "Mogger's Outt is known for its late-night eats and lively atmosphere. Perfect for a quick bite after exploring Kraków's nightlife.",
-          hours: {
-            Monday: "6:00 - 19:00",
-            Tuesday: "6:00 - 19:00",
-            Wednesday: "6:00 - 19:00",
-            Thursday: "6:00 - 19:00",
-            Friday: "6:00 - 21:00",
-            Saturday: "8:00 - 21:00",
-            Sunday: "8:00 - 19:00",
-          },
-        },
-        {
-          id: 3,
-          name: "Muala Wuala",
-          rating: 5.0,
-          reviewCount: 3433,
-          location: "Warszawa, ul. Nowy Świat 64",
-          phone: "722 333 444",
-          img:
-            "https://visitgdansk.com/res/1195104/1195107/chleb_i_wino_chmielna.jpg?size=580x435&crop",
-          description:
-            "Experience fine dining at Muala Wuala, located on Warsaw's vibrant Nowy Świat street. Our chef specializes in innovative Polish cuisine.",
-          hours: {
-            Monday: "6:00 - 19:00",
-            Tuesday: "6:00 - 19:00",
-            Wednesday: "6:00 - 19:00",
-            Thursday: "6:00 - 19:00",
-            Friday: "6:00 - 21:00",
-            Saturday: "8:00 - 21:00",
-            Sunday: "8:00 - 19:00",
-          },
-        },
-        {
-          id: 4,
-          name: "Des pa Cito",
-          rating: 3.0,
-          reviewCount: 1,
-          location: "Wrocław, Rynek 9",
-          phone: "888 999 000",
-          img:
-            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/c1/fc/03/second-room.jpg?w=200&h=200&s=1",
-          description:
-            "A taste of Spain in Wrocław! Des pa Cito offers a wide selection of tapas and Spanish wines in a cozy setting.",
-          hours: {
-            Monday: "6:00 - 19:00",
-            Tuesday: "6:00 - 19:00",
-            Wednesday: "6:00 - 19:00",
-            Thursday: "6:00 - 19:00",
-            Friday: "6:00 - 21:00",
-            Saturday: "8:00 - 21:00",
-            Sunday: "8:00 - 19:00",
-          },
-        },
-        {
-          id: 5,
-          name: "Die Fruhstuck",
-          rating: 3.3,
-          reviewCount: 53,
-          location: "Poznań, Stary Rynek 55",
-          phone: "505 404 303",
-          img:
-            "https://visitgdansk.com/res/963111/963114/Restauracja%20Goldwasser.jpg?size=580x435&crop",
-          description:
-            "Start your day right at Die Fruhstuck in Poznań! We serve a variety of breakfast classics and local specialties.",
-          hours: {
-            Monday: "6:00 - 19:00",
-            Tuesday: "6:00 - 19:00",
-            Wednesday: "6:00 - 19:00",
-            Thursday: "6:00 - 19:00",
-            Friday: "6:00 - 21:00",
-            Saturday: "8:00 - 21:00",
-            Sunday: "8:00 - 19:00",
-          },
-        },
-        {
-          id: 6,
-          name: "what if i just have a name",
-          rating: 2.0,
-          reviewCount: 6,
-          location: "Łódź, ul. Piotrkowska 12",
-          phone: "799 888 777",
-          img:
-            "https://i0.wp.com/www.routesandtrips.com/wp-content/uploads/2015/04/restaurant-pod-lososiem-gdansk.jpg?fit=2048%2C1530&ssl=1",
-          description:
-            "Located on Łódź's famous Piotrkowska street, this restaurant offers a unique dining experience with a focus on fusion cuisine.",
-          hours: {
-            Monday: "6:00 - 19:00",
-            Tuesday: "6:00 - 19:00",
-            Wednesday: "6:00 - 19:00",
-            Thursday: "6:00 - 19:00",
-            Friday: "6:00 - 21:00",
-            Saturday: "8:00 - 21:00",
-            Sunday: "8:00 - 19:00",
-          },
-        },
-      ];
-
-
-      
-      this.selectedRestaurant = this.restaurants.find(restaurant => restaurant.id === parseFloat(urlID));         
-    };
-
-    getHoursArray(): { day : String, hours: String} [] {
-      return Object.keys(this.selectedRestaurant.hours).map(day =>({
-        day: day,
-        hours: this.selectedRestaurant.hours[day],
-      }));
-    };
-    
-    get value() : number {
-      return this.selectedRestaurant ? this.selectedRestaurant.rating : 0;
-    };
-    
-    set value(rating: number) {
-      if(this.selectedRestaurant) {
-        this.selectedRestaurant.rating = rating;
+    fetch(`https://localhost:7084/api/Restaurants/${urlID}`)
+      .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch restaurant data');
       }
-    };
+      return response.json();
+      })
+      .then(data => {
+      this.selectedRestaurant = data;
+      })
+      .catch(error => {
+      console.error('Error fetching restaurant:', error);
+      });
+
+      ``
+    fetch(`https://localhost:7084/api/Reviews/${urlID}`)
+      .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch reviews data');
+      }
+      return response.json();
+      })
+      .then(data => {
+      this.reviews = data;
+      })
+      .catch(error => {
+      console.error('Error fetching reviews:', error);
+      });
+  };
+  
+  calculateAverageRating(): number {
+    if (this.reviews.length === 0) {
+      this.restaurantRating = 0;
+      return 0;
+    }
+    const total = this.reviews.reduce((sum, review) => sum + (review.rating || 0), 0);
+    this.restaurantRating = total / this.reviews.length;
+    return this.restaurantRating;
+  }
+
+
+  getHoursArray(): { day : String, hours: String} [] {
+    return Object.keys(this.selectedRestaurant.hours).map(day =>({
+      day: day,
+      hours: this.selectedRestaurant.hours[day],
+    }));
+  };
+  
 }
   
