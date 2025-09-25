@@ -3,6 +3,7 @@ using menumate.Models;
 using menumate.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace menumate.Controllers
 {
@@ -26,7 +27,8 @@ namespace menumate.Controllers
         [Route("{id:guid}")]
         public IActionResult GetEditRestaurantById(Guid id)
         {
-            var editRestaurant = dbContext.EditRestaurants.Find(id);
+            var editRestaurant = dbContext.EditRestaurants.Where(edit => edit.RestaurantId == id).ToList();
+
             if (editRestaurant == null)
             {
                 return NotFound();
@@ -37,35 +39,52 @@ namespace menumate.Controllers
         [HttpPost]
         public IActionResult AddEditRestaurant(AddEditRestaurantDto addEditRestaurantDto)
         {
-            var editRestaurantEntity = new EditRestaurant()
+
+            var property = typeof(Restaurant).GetProperty(addEditRestaurantDto.PropertyName);
+            if (property == null)
+                return BadRequest("Invalid property name");
+
+            var edit = new EditRestaurant
             {
                 RestaurantId = addEditRestaurantDto.RestaurantId,
-                Description = addEditRestaurantDto.Description,
-                StringValue = addEditRestaurantDto.StringValue,
-                FloatValue = addEditRestaurantDto.FloatValue
+                PropertyName = addEditRestaurantDto.PropertyName,
+                NewValue = addEditRestaurantDto.NewValue,
+                CreatedAt = DateTime.UtcNow
             };
 
-            dbContext.EditRestaurants.Add(editRestaurantEntity);
+            dbContext.EditRestaurants.Add(edit);
             dbContext.SaveChanges();
-            return Ok(editRestaurantEntity);
+
+            return Ok(edit);
         }
 
         [HttpPut]
         [Route("{id:guid}")]
-        public IActionResult UpdateEditRestaurant(Guid id, UpdateEditRestaurantDto updateEditRestaurantDto)
+        public IActionResult ApproveEdit(Guid id)
         {
-            var existingEditRestaurant = dbContext.EditRestaurants.Find(id);
-            if (existingEditRestaurant == null)
+            var edit = dbContext.EditRestaurants.Include(e => e.RestaurantId).FirstOrDefault(e => e.Id == id);
+
+            if (edit == null)
+                return NotFound("Edit not found");
+
+            var property = typeof(Restaurant).GetProperty(edit.PropertyName);
+            if (property == null)
+                return BadRequest("Invalid property name");
+
+            try
             {
-                return NotFound();
+                var convertedValue = Convert.ChangeType(edit.NewValue, property.PropertyType);
+                property.SetValue(edit.RestaurantId, convertedValue);
             }
-            existingEditRestaurant.RestaurantId = updateEditRestaurantDto.RestaurantId;
-            existingEditRestaurant.Description = updateEditRestaurantDto.Description;
-            existingEditRestaurant.StringValue = updateEditRestaurantDto.StringValue;
-            existingEditRestaurant.FloatValue = updateEditRestaurantDto.FloatValue;
+            catch
+            {
+                return BadRequest("Failed to convert new value to the correct type");
+            }
+
             dbContext.SaveChanges();
-            return Ok(existingEditRestaurant);
+            return Ok(edit);
         }
+
 
         [HttpDelete]
         [Route("{id:guid}")]

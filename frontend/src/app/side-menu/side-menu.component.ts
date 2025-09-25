@@ -38,8 +38,7 @@ export class SideMenuComponent implements OnInit{
                 {label: 'Edits', icon:'pi pi-file-edit', command: () => this.navigateEdits()},
                 {
                   label: 'Reviews', 
-                  icon: 'pi pi-star', 
-                  badge: count.toString(), // Use the count from the API
+                  icon: 'pi pi-star',
                   command: () => this.navigateReviews()
                 },
                 
@@ -49,7 +48,7 @@ export class SideMenuComponent implements OnInit{
               label: 'Menu',
               items: [
                 {label: 'Item edits', icon:'pi pi-file-edit', command : () => {this.navigateItemEdits()}},
-                {label:'Item reviews', icon:'pi pi-star', badge:'2', command : () => {this.navigateItemReviews()}}, 
+                {label:'Item reviews', icon:'pi pi-star'  , command : () => {this.navigateItemReviews()}}, 
               ]
             },
             {

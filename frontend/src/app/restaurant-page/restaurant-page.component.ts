@@ -8,16 +8,17 @@ import { ActivatedRoute} from '@angular/router';
 import { TableModule } from 'primeng/table'
 import { AccordionModule } from 'primeng/accordion';
 import { DialogModule } from 'primeng/dialog';
-import { FloatLabel } from 'primeng/floatlabel';
 import { TextareaModule } from 'primeng/textarea';
 import { MenuItemCardComponent } from "../menu-item-card/menu-item-card.component";
 import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { ReviewComponent } from "../review/review.component";
+import { ProposeRestaurantEditComponent } from "../propose-restaurant-edit/propose-restaurant-edit.component";
+import { ReviewRestaurantMakeComponent } from "../review-restaurant-make/review-restaurant-make.component";
 
 @Component({
   selector: 'app-restaurant-page',
-  imports: [TopSearchComponent, ButtonModule, IconFieldModule, RatingModule, FormsModule, TableModule, AccordionModule, DialogModule, TextareaModule, FloatLabel, MenuItemCardComponent, Toast, ReviewComponent],
+  imports: [TopSearchComponent, ButtonModule, IconFieldModule, RatingModule, FormsModule, TableModule, AccordionModule, DialogModule, TextareaModule, MenuItemCardComponent, Toast, ReviewComponent, ProposeRestaurantEditComponent, ReviewRestaurantMakeComponent],
   templateUrl: './restaurant-page.component.html',
   styleUrl: './restaurant-page.component.css',
   providers: [MessageService]
@@ -31,6 +32,7 @@ export class RestaurantPageComponent implements OnInit{
   restaurantRating: number = 0;
   visibleReview: boolean = false;
   visibleAllReviews: boolean = false;
+  visibleEdit: boolean = false;
 
   showReviewDialog() {
     this.visibleReview = true;
@@ -46,10 +48,16 @@ export class RestaurantPageComponent implements OnInit{
     this.visibleAllReviews = false;
   }
 
-  reviewPosted() {
-    console.log('Review clicked')
-    this.messageService.add({severity:'success', summary: "Success", detail:"Review posted"})
+  showEditDialog(){
+    this.visibleEdit = true;
+    console.log("Show edit = ", this.visibleEdit)
   }
+
+  hideEditDialog(){
+    this.visibleEdit = false;
+    console.log("Show edit = ", this.visibleEdit)
+  }
+
   
 
   constructor(private route: ActivatedRoute, private messageService: MessageService) {}
@@ -100,17 +108,10 @@ export class RestaurantPageComponent implements OnInit{
       return 0;
     }
     const total = this.reviews.reduce((sum, review) => sum + (review.rating || 0), 0);
-    this.restaurantRating = total / this.reviews.length;
+    this.restaurantRating = parseFloat((total / this.reviews.length).toFixed(2));
     return this.restaurantRating;
   }
 
-
-  getHoursArray(): { day : String, hours: String} [] {
-    return Object.keys(this.selectedRestaurant.hours).map(day =>({
-      day: day,
-      hours: this.selectedRestaurant.hours[day],
-    }));
-  };
   
 }
   

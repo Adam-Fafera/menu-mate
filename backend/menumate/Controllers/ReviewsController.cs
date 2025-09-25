@@ -43,6 +43,10 @@ namespace menumate.Controllers
             var reviewEntity = new Review()
             {
                 RestaurantId = addReviewDto.RestaurantId,
+                UserId = addReviewDto.UserId,
+                UserName = addReviewDto.UserName,
+                UserImagePath = addReviewDto.UserImagePath,
+                Title = addReviewDto.Title,
                 Description = addReviewDto.Description,
                 Rating = addReviewDto.Rating
             };

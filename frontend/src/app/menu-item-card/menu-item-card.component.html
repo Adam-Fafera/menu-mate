@@ -1,13 +1,13 @@
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 w-screen items-center justify-center rounded-3xl">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10 p-4">
     @for (item of items; track item) {
-    <p-card (click)="showDialog(item)" [style]="{ width: '18rem', overflow: 'hidden' }" class="cursor-pointer">
+    <p-card (click)="showDialog(item)" [style]="{ width: '18rem',height:'20rem', overflow: 'hidden' }" class="cursor-pointer">
         <ng-template #header>
             <img alt="Card" class="h-32 w-full object-cover" src="{{item.image}}" />
         </ng-template>
         <ng-template #title> {{item.name}} </ng-template>
         <ng-template #subtitle> {{item.price}} {{getCurrencySymbol(item.currency)}}</ng-template>
-        <div>
-            <p>
+        <div class="overflow-hidden">
+            <p class="text-ellipsis overflow-hidden">
                 {{item.description}}
             </p>
         </div>

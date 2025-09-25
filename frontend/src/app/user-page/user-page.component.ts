@@ -10,7 +10,7 @@ import { PrimeIcons } from 'primeng/api';
 @Component({
   selector: 'app-user-page',
   standalone: true,
-  imports: [TopSearchComponent, ButtonModule, AvatarModule, TabsModule, RouterLink],
+  imports: [ButtonModule, AvatarModule, TabsModule, RouterLink],
   templateUrl: './user-page.component.html',
   styleUrl: './user-page.component.css'
 })

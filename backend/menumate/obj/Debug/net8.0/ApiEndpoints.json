@@ -75,7 +75,7 @@
   },
   {
     "ContainingType": "menumate.Controllers.EditRestaurantsController",
-    "Method": "UpdateEditRestaurant",
+    "Method": "ApproveEdit",
     "RelativePath": "api/EditRestaurants/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -84,11 +84,6 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "updateEditRestaurantDto",
-        "Type": "menumate.Models.UpdateEditRestaurantDto",
         "IsRequired": true
       }
     ],

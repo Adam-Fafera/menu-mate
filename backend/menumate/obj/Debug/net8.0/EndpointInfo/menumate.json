@@ -127,25 +127,6 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateEditRestaurantDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateEditRestaurantDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateEditRestaurantDto"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"
@@ -789,20 +770,12 @@
             "type": "string",
             "format": "uuid"
           },
-          "restaurant": {
-            "$ref": "#/components/schemas/Restaurant"
-          },
-          "description": {
+          "propertyName": {
             "type": "string",
             "nullable": true
           },
-          "stringValue": {
+          "newValue": {
             "type": "string",
-            "nullable": true
-          },
-          "floatValue": {
-            "type": "number",
-            "format": "float",
             "nullable": true
           }
         },
@@ -897,6 +870,22 @@
             "type": "string",
             "format": "uuid"
           },
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "userImagePath": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
           "description": {
             "type": "string",
             "nullable": true
@@ -979,66 +968,6 @@
         ],
         "type": "integer",
         "format": "int32"
-      },
-      "Restaurant": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "rating": {
-            "type": "number",
-            "format": "float"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "location": {
-            "type": "string",
-            "nullable": true
-          },
-          "phone": {
-            "type": "string",
-            "nullable": true
-          },
-          "imagePath": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "UpdateEditRestaurantDto": {
-        "type": "object",
-        "properties": {
-          "restaurantId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "restaurant": {
-            "$ref": "#/components/schemas/Restaurant"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "stringValue": {
-            "type": "string",
-            "nullable": true
-          },
-          "floatValue": {
-            "type": "number",
-            "format": "float",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "UpdateItemDto": {
         "type": "object",
