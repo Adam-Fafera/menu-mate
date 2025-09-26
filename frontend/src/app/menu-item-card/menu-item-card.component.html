@@ -78,9 +78,10 @@
     </p-tabs>
     <ng-template #footer>
         <p-button (click)="showEdit()" label="Propose edit" [text]="true" severity="secondary" />
-        <p-button label="Review" [outlined]="true" severity="secondary"  />
+        <p-button (click)="showReview()" label="Review" [outlined]="true" severity="secondary"  />
     </ng-template>
 
     <app-propose-item-edit [(visible)]="visibleEdit" [itemId]="selectedItem()?.id"></app-propose-item-edit>
+    <app-review-item-make [(visible)]="visibleReview" [itemId]="selectedItem()?.id"></app-review-item-make>
 
 </p-dialog>
