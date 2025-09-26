@@ -45,8 +45,8 @@ export class RestaurantDashboardComponent{
         next: rating => {
           this.rating = rating
         },
-        error: err => {
-          console.error('Failed to fetch rating: ', err)
+        error: error => {
+          console.error('Failed to fetch rating: ', error)
           this.rating = 0;
         }
       })

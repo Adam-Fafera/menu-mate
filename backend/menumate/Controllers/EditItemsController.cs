@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace menumate.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class EditItemsController : Controller
     {
         public readonly ApplicationDbContext dbContext;
@@ -39,12 +41,16 @@ namespace menumate.Controllers
         [HttpPost]
         public IActionResult AddEdit(AddEditItemDto addEditItemDto)
         {
+            var property = typeof(MenuItem).GetProperty(addEditItemDto.PropertyName);
+            if (property == null)
+                return BadRequest("Invalid property name");
+            
             var edit = new EditItem()
             {
                 ItemId = addEditItemDto.ItemId,
-                RestaurantId = addEditItemDto.RestaurantId,
-                Description = addEditItemDto.Description,
-
+                PropertyName = addEditItemDto.PropertyName,
+                NewValue = addEditItemDto.NewValue,
+                CreatedAt = DateTime.UtcNow
             };
 
             dbContext.EditItems.Add(edit);

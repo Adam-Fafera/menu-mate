@@ -23,6 +23,8 @@ export class SideMenuComponent implements OnInit{
   }
 
   ngOnInit(){
+
+    
     if(this.id) {
       this.ratingService.countRestaurantReviews(this.id).subscribe({
         next: (count) => {
@@ -48,7 +50,7 @@ export class SideMenuComponent implements OnInit{
               label: 'Menu',
               items: [
                 {label: 'Item edits', icon:'pi pi-file-edit', command : () => {this.navigateItemEdits()}},
-                {label:'Item reviews', icon:'pi pi-star'  , command : () => {this.navigateItemReviews()}}, 
+                {label:'Item reviews', icon:'pi pi-star', command : () => {this.navigateItemReviews()}}, 
               ]
             },
             {

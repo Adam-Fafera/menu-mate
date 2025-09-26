@@ -334,10 +334,10 @@ C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\staticwebasse
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\menumate.csproj.Up2Date
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\menumate.dll
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\refint\menumate.dll
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\menumate.pdb
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\menumate.genruntimeconfig.cache
 C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\ref\menumate.dll
+C:\Users\ADASF\Desktop\menu-mate\backend\menumate\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

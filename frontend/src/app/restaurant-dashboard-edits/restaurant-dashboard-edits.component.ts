@@ -43,20 +43,52 @@ export class RestaurantDashboardEditsComponent implements OnInit {
       });
   }
 
-  approveEdit() {
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Approved',
-      detail: 'Change has been made'
-    });
+  approveEdit(editId: string) {
+    this.http.put(`https://localhost:7084/api/EditRestaurants/${editId}/approve`, {})
+      .subscribe({
+        next: (response) => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Edit approved and applied to restaurant'
+          });
+          this.loadPendingEdits(this.restaurantUrl);
+        },
+        error: (error) => {
+          console.error('Error approving edit:', error);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Failed to approve edit'
+          });
+        }
+      });
   }
 
-  denyEdit() {
-    this.messageService.add({
-            severity: 'error',
-            summary: 'Denied',
-            detail: 'Change has been denied'
+  denyEdit(editId: string) {
+    this.http.delete(`https://localhost:7084/api/EditRestaurants/${editId}`)
+      .subscribe({
+        next: (response) => {
+          this.messageService.add({
+            severity: 'info',
+            summary: 'Edit Denied',
+            detail: 'Edit has been rejected and removed'
           });
+          this.loadPendingEdits(this.restaurantUrl); // Refresh the list
+        },
+        error: (error) => {
+          console.error('Error denying edit:', error);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Failed to deny edit'
+          });
+        }
+      });
+  }
+
+  onEditProposed() {
+    this.loadPendingEdits(this.restaurantUrl);
   }
   
 }

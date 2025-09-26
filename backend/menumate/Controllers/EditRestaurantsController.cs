@@ -54,18 +54,23 @@ namespace menumate.Controllers
 
             dbContext.EditRestaurants.Add(edit);
             dbContext.SaveChanges();
-
             return Ok(edit);
         }
 
         [HttpPut]
-        [Route("{id:guid}")]
-        public IActionResult ApproveEdit(Guid id)
+        [Route("{id:guid}/approve")]
+        public IActionResult ApproveEdit(string id)
         {
-            var edit = dbContext.EditRestaurants.Include(e => e.RestaurantId).FirstOrDefault(e => e.Id == id);
+            var edit = dbContext.EditRestaurants
+                .Include(e => e.Restaurant)
+                .FirstOrDefault(e => e.Id.ToString() == id);
 
             if (edit == null)
                 return NotFound("Edit not found");
+
+            var restaurant = dbContext.Restaurants.Find(edit.RestaurantId);
+            if (restaurant == null)
+                return NotFound("Restaurant not found");
 
             var property = typeof(Restaurant).GetProperty(edit.PropertyName);
             if (property == null)
@@ -74,15 +79,17 @@ namespace menumate.Controllers
             try
             {
                 var convertedValue = Convert.ChangeType(edit.NewValue, property.PropertyType);
-                property.SetValue(edit.RestaurantId, convertedValue);
-            }
-            catch
-            {
-                return BadRequest("Failed to convert new value to the correct type");
-            }
+                property.SetValue(restaurant, convertedValue);
 
-            dbContext.SaveChanges();
-            return Ok(edit);
+                dbContext.EditRestaurants.Remove(edit);
+                dbContext.SaveChanges();
+
+                return Ok(new { message = "Edit approved and applied", restaurant });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error applying edit: {ex.Message}");
+            }
         }
 
 

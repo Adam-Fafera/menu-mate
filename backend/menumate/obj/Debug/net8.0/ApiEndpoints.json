@@ -1,8 +1,34 @@
 [
   {
     "ContainingType": "menumate.Controllers.EditItemsController",
+    "Method": "GetEdits",
+    "RelativePath": "api/EditItems",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "menumate.Controllers.EditItemsController",
+    "Method": "AddEdit",
+    "RelativePath": "api/EditItems",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addEditItemDto",
+        "Type": "menumate.Models.AddEditItemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "menumate.Controllers.EditItemsController",
     "Method": "GetEditById",
-    "RelativePath": "{id}",
+    "RelativePath": "api/EditItems/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -18,7 +44,7 @@
   {
     "ContainingType": "menumate.Controllers.EditItemsController",
     "Method": "DeleteEdit",
-    "RelativePath": "{id}",
+    "RelativePath": "api/EditItems/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -75,9 +101,9 @@
   },
   {
     "ContainingType": "menumate.Controllers.EditRestaurantsController",
-    "Method": "ApproveEdit",
+    "Method": "DeleteEditRestaurant",
     "RelativePath": "api/EditRestaurants/{id}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -91,15 +117,15 @@
   },
   {
     "ContainingType": "menumate.Controllers.EditRestaurantsController",
-    "Method": "DeleteEditRestaurant",
-    "RelativePath": "api/EditRestaurants/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "ApproveEdit",
+    "RelativePath": "api/EditRestaurants/{id}/approve",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Guid",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

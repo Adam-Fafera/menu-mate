@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\models\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\models\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\models\\addedititemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\models\\addedititemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\controllers\\edititemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\controllers\\edititemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,34 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReviewsController.cs",
-              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\ReviewsController.cs",
-              "RelativeDocumentMoniker": "menumate\\Controllers\\ReviewsController.cs",
-              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\ReviewsController.cs",
-              "RelativeToolTip": "menumate\\Controllers\\ReviewsController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAtwCMAAAANAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AddEditItemDto.cs",
+              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\AddEditItemDto.cs",
+              "RelativeDocumentMoniker": "menumate\\Models\\AddEditItemDto.cs",
+              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\AddEditItemDto.cs",
+              "RelativeToolTip": "menumate\\Models\\AddEditItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T17:22:16.883Z",
+              "WhenOpened": "2025-09-26T20:13:01.122Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "menumate\\Models\\Entities\\Review.cs",
-              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\Entities\\Review.cs",
-              "RelativeToolTip": "menumate\\Models\\Entities\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "EditItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\EditItemsController.cs",
+              "RelativeDocumentMoniker": "menumate\\Controllers\\EditItemsController.cs",
+              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\EditItemsController.cs",
+              "RelativeToolTip": "menumate\\Controllers\\EditItemsController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T17:18:46.954Z",
+              "WhenOpened": "2025-09-26T20:12:32.095Z",
               "EditorCaption": ""
             }
           ]

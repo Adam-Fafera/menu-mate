@@ -5,7 +5,48 @@
     "version": "1.0"
   },
   "paths": {
-    "/{id}": {
+    "/api/EditItems": {
+      "get": {
+        "tags": [
+          "EditItems"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "EditItems"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddEditItemDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddEditItemDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddEditItemDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/EditItems/{id}": {
       "get": {
         "tags": [
           "EditItems"
@@ -112,7 +153,7 @@
           }
         }
       },
-      "put": {
+      "delete": {
         "tags": [
           "EditRestaurants"
         ],
@@ -132,8 +173,10 @@
             "description": "OK"
           }
         }
-      },
-      "delete": {
+      }
+    },
+    "/api/EditRestaurants/{id}/approve": {
+      "put": {
         "tags": [
           "EditRestaurants"
         ],
@@ -143,8 +186,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string",
-              "format": "uuid"
+              "type": "string"
             }
           }
         ],
@@ -763,6 +805,28 @@
   },
   "components": {
     "schemas": {
+      "AddEditItemDto": {
+        "required": [
+          "newValue",
+          "propertyName"
+        ],
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "propertyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "newValue": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AddEditRestaurantDto": {
         "type": "object",
         "properties": {

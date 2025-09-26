@@ -6,46 +6,60 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
+import { ToastModule } from "primeng/toast";
 
-export enum RestaurantProperty {
+export enum ItemProperty {
   Name = 'Name',
-  Description = 'Description',
-  Location = 'Location',
-  Phone = 'Phone',
+  Price = 'Price',
+  Calories = 'Calories',
+  Fats = 'Fats',
+  Carbs = 'Carbs',
+  Proteins = 'Proteins',
+  Allergens = 'Allergens',
+  Description = 'Description'
 }
 
 @Component({
-  selector: 'app-propose-restaurant-edit',
+  selector: 'app-propose-item-edit',
   standalone: true,
-  imports: [DropdownModule, InputTextModule, ButtonModule, FormsModule, DialogModule],
-  templateUrl: './propose-restaurant-edit.component.html',
-  styleUrl: './propose-restaurant-edit.component.css'
+  imports: [DropdownModule, InputTextModule, ButtonModule, FormsModule, DialogModule, ToastModule],
+  templateUrl: './propose-item-edit.component.html',
+  styleUrl: './propose-item-edit.component.css',
 })
-export class ProposeRestaurantEditComponent {
-  @Input() restaurantId: string | null = null;
+export class ProposeItemEditComponent {
+  @Input() itemId: string | null = null;
   @Input() visible: boolean = false;
   @Output() visibleChange = new EventEmitter<boolean>();
   @Output() editProposed = new EventEmitter<void>();
 
-  properties = Object.values(RestaurantProperty);
-  selectedProperty: RestaurantProperty | null = null;
+  properties = Object.values(ItemProperty);
+  selectedProperty: ItemProperty | null = null;
   newValue: string = '';
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {}
 
   proposeEdit() {
-    if (!this.selectedProperty || !this.newValue || !this.restaurantId) return;
-
-    const edit = {
-      restaurantId: this.restaurantId,
-      propertyName: this.selectedProperty,
-      newValue: this.newValue
+    if (!this.selectedProperty || !this.newValue || !this.itemId) {
+      console.log('Validation failed:', {
+            selectedProperty: this.selectedProperty,
+            newValue: this.newValue,
+            itemId: this.itemId
+        });
+        return;
     };
 
-    this.http.post(`https://localhost:7084/api/EditRestaurants`, edit)
+    const edit = {
+      ItemId: this.itemId,
+      PropertyName: this.selectedProperty,
+      NewValue: this.newValue,
+    };
+
+    console.log("Edit: ", edit);
+
+    this.http.post(`https://localhost:7084/api/EditItems`, edit)
       .subscribe({
         next: () => {
           this.messageService.add({
@@ -64,6 +78,7 @@ export class ProposeRestaurantEditComponent {
             summary: 'Error',
             detail: 'Failed to propose edit'
           });
+          console.log(edit);
         }
       });
   }
@@ -77,5 +92,6 @@ export class ProposeRestaurantEditComponent {
     this.visible = false;
     this.visibleChange.emit(this.visible);
   }
+
 
 }

@@ -17,6 +17,5 @@ export class RestaurantDashboardItemEditsComponent implements OnInit {
 
     ngOnInit(): void {
 
-      // there will be items to load
     }
   }
