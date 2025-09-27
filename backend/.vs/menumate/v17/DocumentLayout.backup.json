@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|c:\\users\\adasf\\desktop\\menu-mate\\backend\\menumate\\controllers\\edititemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61385E0A-FFFC-4E7A-BE02-6399DACB6177}|menumate\\menumate.csproj|solutionrelative:menumate\\controllers\\edititemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,25 +31,38 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "menumate\\Models\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Models\\Entities\\User.cs",
+              "RelativeToolTip": "menumate\\Models\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T02:44:40.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "EditItemsController.cs",
               "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\EditItemsController.cs",
               "RelativeDocumentMoniker": "menumate\\Controllers\\EditItemsController.cs",
               "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\EditItemsController.cs",
               "RelativeToolTip": "menumate\\Controllers\\EditItemsController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAmwB8AAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAcwEUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T00:07:04.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EditRestaurantsController.cs",
               "DocumentMoniker": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\EditRestaurantsController.cs",
               "RelativeDocumentMoniker": "menumate\\Controllers\\EditRestaurantsController.cs",
               "ToolTip": "C:\\Users\\ADASF\\Desktop\\menu-mate\\backend\\menumate\\Controllers\\EditRestaurantsController.cs",
               "RelativeToolTip": "menumate\\Controllers\\EditRestaurantsController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAIwFwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwEMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-27T00:07:04.014Z",
               "EditorCaption": ""
