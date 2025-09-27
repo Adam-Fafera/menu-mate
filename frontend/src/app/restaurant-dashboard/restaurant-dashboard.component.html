@@ -8,19 +8,16 @@
                 <img class="rounded-xl w-96 h-96 object-fill" src="{{restaurant.imagePath}}"/>
                 <span class="text-5xl"> <strong> {{restaurant.name}}</strong></span>
             </div>
-            <!-- Restaurant reviews -->
+            
             <div class="grid grid-cols-2 gap-2">
                 <div routerLink="./edits" class="grid-cols-3 gap-3 cursor-pointer rounded-lg border border-zinc-700 hover:shadow-white-xl p-2">
-                    <span class="font-bold text-xl"> Pending restaurant edits </span>
-                       
+                    <span class="font-bold text-xl"> Pending restaurant edits </span>         
                 </div>
                 <div routerLink="./item-edits" class="grid-cols-3 gap-3 cursor-pointer rounded-lg border border-zinc-700 hover:shadow-white-xl p-2">
                     <span class="font-bold text-xl"> Pending menu items edits </span>
                 </div>
                 <div routerLink="./reviews" class="grid-cols-3 gap-3 cursor-pointer rounded-lg border border-zinc-700 hover:shadow-white-xl p-2">
                     <span class="font-bold text-xl"> Rating - reviews of restaurant </span>
-                        
-                    <p-badge value="{{reviewCount}}"/>
                 </div>
                 <div routerLink="./item-reviews" class="grid-cols-3 gap-3 cursor-pointer rounded-lg border border-zinc-700 hover:shadow-white-xl p-2">
                     <span class="font-bold text-xl"> Rating - reviews of menu items (avg) </span>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("menumate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdd9c36af8a979b8a2f1444f5ada71c87cecce58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+871551f0e9df75d415327d2ca70091209295476b")]
 [assembly: System.Reflection.AssemblyProductAttribute("menumate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("menumate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,26 +1,34 @@
- <div class="grid grid-cols-2">  
-    @for (change of changes; track change.id) {
+
+    <div class="basis-4/5 bg-zinc-900 p-6 mt-6 mb-3 mr-6 rounded-lg">
+
+    <div class="grid grid-cols-2">  
+    @for (edit of pendingEdits; track edit.id) {
         <div class="m-3 hover:brightness-125 hover:shadow-white-lg rounded-xl cursor-pointer border border-zinc-700">
             <p-card>
-                <span class="text-2xl "><strong>{{change.field}}</strong></span>
+                <span class="text-2xl "><strong>{{edit.propertyName}}</strong></span>
                 <div class="grid grid-cols-4 grid-rows-1 gap-3 text-xl mt-3">
-                    <div class="">
-                        {{change.now}}
+                    <div>
+                        <p>{{item?.[edit.propertyName.toLowerCase()] ?? 'N/A'}}</p>
                     </div>
                     <div class="flex justify-center">
                         <i class=" pi pi-arrow-right"></i>
                     </div>
-                    <div class="">
-                        {{change.new}}
+                    <div>
+                        <div class="">
+                            {{edit.newValue}}
+                        </div>
+                        <div class="text-zinc-700">
+                            {{edit.createdAt | date}}
+                        </div>
                     </div>
                     <div class="p-3 flex justify-center ">
-                        <p-button (click)="confirmChange()" class="m-1"><i class="pi pi-check"></i></p-button>
-                        <p-button (click)="rejectChange()" severity="danger" class="m-1"><i class="pi pi-times"></i></p-button>
+                        <p-button (click)="approveEdit(edit.id)" class="m-1"><i class="pi pi-check"></i></p-button>
+                        <p-button (click)="denyEdit(edit.id)" severity="danger" class="m-1"><i class="pi pi-times"></i></p-button>
                     </div>
                 </div>
-                    
             </p-card>
         </div>
-    }   
-</div>
+        }   
+    </div>
 <p-toast/>
+

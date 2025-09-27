@@ -25,13 +25,14 @@ import { DatePipe } from '@angular/common';
 export class RestaurantDashboardEditsComponent implements OnInit {
   pendingEdits: any[] = [];
   constructor(private route: ActivatedRoute, private http: HttpClient, private messageService: MessageService, private restaurantService: RestaurantService) {}
-  
   restaurantUrl: any = null;
+  restaurant: any = null;
   
 
   ngOnInit(): void {
       this.restaurantUrl = this.route.snapshot.paramMap.get('id');
       this.loadPendingEdits(this.restaurantUrl);
+      this.loadRestaurant(this.restaurantUrl);
       this.restaurantService.getRestaurantById(this.restaurantUrl);
   }
 
@@ -41,6 +42,15 @@ export class RestaurantDashboardEditsComponent implements OnInit {
         next:(edits) => this.pendingEdits = edits,
         error: (error) => console.error('Error loading edits: ', error)
       });
+  }
+
+  loadRestaurant(restaurantId: string){
+    this.http.get<any[]>(`https://localhost:7084/api/Restaurants/${restaurantId}`)
+      .subscribe({
+        next:(restaurant) => this.restaurant = restaurant,
+        error: (error) => console.error('Error loading restaurant info', error)
+      })
+    
   }
 
   approveEdit(editId: string) {

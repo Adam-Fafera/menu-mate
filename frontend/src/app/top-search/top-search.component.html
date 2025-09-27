@@ -1,18 +1,6 @@
-<p-drawer [(visible)]="visible" header="Menu">
-    <div class="flex flex-col justify-center items-center gap-y-5">
-        
-        <p-button routerLink="/browse" class="w-full" styleClass="w-full">Browse</p-button>
-        <p-button class="w-full" styleClass="w-full">Placeholder 1</p-button>
-        <p-button class="w-full" styleClass="w-full">Placeholder 2</p-button>
-        <p-button class="w-full" styleClass="w-full">Placeholder 3</p-button>
-    </div>
-
-</p-drawer>
-
-
 <div class="flex flex-row justify-center items-stretch">    
     <p-toolbar class="w-full ml-3 mr-3">
-        <p-button (click)="visible = true" icon="pi pi-bars" />  
+        <p-button routerLink="/browse" icon="pi pi-home" />  
         <p-floatlabel variant="on">
             <p-iconfield >
                 <p-inputicon class="pi pi-search" />
@@ -24,6 +12,4 @@
             <p-avatar shape="circle" class="h-full w-svw shadow-sm shadow-black" image="https://tr.rbxcdn.com/180DAY-d2aa8b558f4c73dc77ab184210a56788/420/420/Hat/Png/noFilter"></p-avatar>       
         </div>
     </p-toolbar>
-
-    
 </div>

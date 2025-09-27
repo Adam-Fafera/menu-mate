@@ -47,6 +47,7 @@ namespace menumate.Controllers
                 Description = addReviewItemDto.Description,
                 Rating = addReviewItemDto.Rating
             };
+
             dbContext.ReviewItems.Add(reviewItemEntity);
             dbContext.SaveChanges();
             return Ok(reviewItemEntity);

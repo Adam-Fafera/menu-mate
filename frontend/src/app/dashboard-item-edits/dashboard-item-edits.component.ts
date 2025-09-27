@@ -3,60 +3,94 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-dashboard-item-edits',
-  imports: [CardModule, ButtonModule, ToastModule ],
+  imports: [CardModule, ButtonModule, ToastModule, DatePipe],
   templateUrl: './dashboard-item-edits.component.html',
   styleUrl: './dashboard-item-edits.component.css',
   providers: [MessageService],
 })
 export class DashboardItemEditsComponent implements OnInit{
 
-  changes: any[] = [];
-
-  constructor(private messageService : MessageService) {}
+ pendingEdits: any[] = [];
+  constructor(private route: ActivatedRoute, private http: HttpClient, private messageService: MessageService) {}
+  itemId: any = null;
+  item: any = null;
 
   ngOnInit(): void {
-    
-    this.changes = [
-      {
-        id: 1,
-        restaurantID: 1,
-        itemID: 1,
-        field: 'Price',
-        now: '15.5',
-        new: '16.99',
-      },
-      {
-        id: 2,
-        restaurantID: 1,
-        itemID: 1,
-        field: 'Name',
-        now: 'Sandwich',
-        new: 'Teriyaki Sandwich',
-      },
-      {
-        id: 3,
-        restaurantID: 1,
-        itemID: 1,
-        field: 'Description',
-        now: 'Really tasty chicken teriyaki sandwich',
-        new: 'Really super ultra mega tasty chicken teriyaki sandwich',
-      }
-    ];
-
+      this.itemId = this.route.snapshot.paramMap.get('id');
+      this.loadPendingEdits(this.itemId);
+      this.loadItem(this.itemId);
+      console.log(this.itemId);
   }
 
-
-  confirmChange() {
-    console.log('confirmed');
-    this.messageService.add({severity: 'success', summary: 'Confirmed', detail: 'You accepted the change'})
+  loadPendingEdits(itemId: string) {   
+    this.http.get<any[]>(`https://localhost:7084/api/EditItems/${itemId}`)
+      .subscribe({
+        next:(edits) => this.pendingEdits = edits,
+        error: (error) => console.error('Error loading edits: ', error)
+      });
   }
 
-  rejectChange() {
-    console.log('rejected');
-    this.messageService.add({severity: 'error', summary: 'Rejected', detail: 'You rejected the change'})
+  loadItem(itemId: string){
+    this.http.get<any>(`https://localhost:7084/api/Items/${itemId}`)
+      .subscribe({
+        next: (item) => this.item = item,
+        error: (error) => console.error('Error loading item: ', error)
+      });
   }
 
+  approveEdit(editId: string) {
+    this.http.put(`https://localhost:7084/api/EditItems/${editId}/approve`, {})
+      .subscribe({
+        next: (response) => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Success',
+            detail: 'Edit approved and applied to restaurant'
+          });
+          this.loadPendingEdits(this.itemId);
+        },
+        error: (error) => {
+          console.error('Error approving edit:', error);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Failed to approve edit'
+          });
+        }
+      });
+  }
+
+  denyEdit(editId: string) {
+    this.http.delete(`https://localhost:7084/api/EditItems/${editId}`, {responseType: 'text'})
+      .subscribe({
+        next: () => {
+          this.messageService.add({
+            severity: 'info',
+            summary: 'Edit Denied',
+            detail: 'Edit has been rejected and removed'
+          });
+          this.loadPendingEdits(this.itemId);
+        },
+        error: (error) => {
+          console.error('Error denying edit:', error);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Failed to deny edit'
+          });
+        }
+      });
+  }
+
+  onEditProposed() {
+    this.loadPendingEdits(this.itemId);
+  }
+  
 }

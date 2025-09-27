@@ -24,6 +24,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -38,5 +39,10 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseCors("AllowFrontend");
+
+app.UseCors(policy => policy
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 app.Run();
